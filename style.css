@@ -49,7 +49,7 @@ body{
   padding-top: 50px;
 }
 .banner{
-  background-image: url('/Website resources/bb2.jpg');
+  background-image: url('./images/bb2.jpg');
   background-size:cover;
   color: white;
   background-position: center center;
