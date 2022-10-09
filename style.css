@@ -49,7 +49,7 @@ body{
   padding-top: 50px;
 }
 .banner{
-  background-image: url('bb2.jpg');
+  background-image: url('/Website resources/bb2.jpg');
   background-size:cover;
   color: white;
   background-position: center center;
@@ -134,7 +134,7 @@ body{
 {
   padding: 10px;
   padding-left: 1050px;
-  width: 1000px;
+  width: 100px;
 }
 .navbar input{
   width: 200px;
