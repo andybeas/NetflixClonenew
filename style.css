@@ -130,13 +130,37 @@ body{
 
 
 }
-.search
-{
-  padding: 10px;
-  padding-left: 1050px;
-  width: 100px;
+
+.search {
+  margin-left: auto; /* push to right side of navbar */
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
 }
-.navbar input{
-  width: 200px;
+
+.search input {
+  padding: 8px 12px 8px 35px; /* extra left padding for icon */
+  border-radius: 20px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  width: 220px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search input:focus {
   outline: none;
+  border-color: #888;
+  background-color: #333;
+  width: 280px; /* expand smoothly */
+}
+
+/* Optional search icon */
+.search::before {
+  content: "🔍";
+  position: absolute;
+  margin-left: 10px;
+  color: #aaa;
+  font-size: 16px;
 }
