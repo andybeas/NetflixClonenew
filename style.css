@@ -107,29 +107,36 @@ body{
   border: none;
   border-radius: 5px;
 }
-.navbar{
+.navbar {
   background-color: #111;
 }
-.navbar ul{
+
+.navbar ul {
   overflow: auto;
   padding-left: 150px;
 }
-.navbar li{
+
+.navbar li {
   float: left;
   list-style: none;
   margin: 12px 15px;
- 
 }
-.navbar li a{
-  padding: 2px 2px;
+
+.navbar li a {
+  padding: 2px 6px;
   text-decoration: none;
   color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
-.navbar li a :hover{
-  color: gray;
 
-
+/* Correct hover */
+.navbar li a:hover {
+  color: #e50914;   /* Netflix red */
+  transform: scale(1.1);
 }
+
 .search
 {
   padding: 10px;
