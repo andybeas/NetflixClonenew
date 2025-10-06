@@ -1,142 +1,159 @@
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #111;
-    margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111;
+  margin: 0px;
 }
 #icon{
-  padding-left: 25px;
-  padding-top: 20px;
-  height: 55px;
-  width: 100px;
-  margin-bottom: -65px;
+padding-left: 25px;
+padding-top: 20px;
+height: 55px;
+width: 100px;
+margin-bottom: -65px;
 }
 .row_posters_org img{
-  max-height: 180px;
-  padding: 10px;
-  transition: transform 500ms;
-  height: 450px;
+max-height: 180px;
+padding: 10px;
+transition: transform 500ms;
+height: 450px;
 }
 .row_posters_tre img{
-  padding: 10px;
-  max-height: 180px;
-  transition: transform 500ms;
+padding: 10px;
+max-height: 180px;
+transition: transform 500ms;
 }
 .row_posters_org img:hover{
-  transform: scale(1.2);
+transform: scale(1.2);
 }
 .row_posters_tre img:hover{
-  transform: scale(1.2);
+transform: scale(1.2);
 }
 
 .row_poster:hover{
-  transform: scale(1.1);
+transform: scale(1.1);
 }
 .row1{
-  color: white;
-  margin-left: 15px;
-  max-height: 180px;
-  
+color: white;
+margin-left: 15px;
+max-height: 180px;
+
 }
 .row1 h2{
-  margin-bottom: 15px;
+margin-bottom: 15px;
 }
 .row{
-  color: white;
-  margin-left: 15px;
+color: white;
+margin-left: 15px;
 }
 .row{
-  padding-top: 50px;
+padding-top: 50px;
 }
 .banner{
-  background-image: url('./images/bb2.jpg');
-  background-size:cover;
-  color: white;
-  background-position: center center;
-  object-fit:cover;
-  height: 700px;
+background-image: url('./images/bb2.jpg');
+background-size:cover;
+color: white;
+background-position: center center;
+object-fit:cover;
+height: 700px;
 }
 .content{
-  padding-top: 203px;
-  height: 190px;
+padding-top: 203px;
+height: 190px;
 
 }
 .title{
-  color: #111;
-  font-size: 3rem;
-  font-weight: 800;
-  padding-top:  12.5rem;
-  margin-bottom: 15px;
-  margin-left: 20px;
+color: #111;
+font-size: 3rem;
+font-weight: 800;
+padding-top:  12.5rem;
+margin-bottom: 15px;
+margin-left: 20px;
 }
 .description{
-  width: 45rem;
-  font-weight: 500;
-  color: #111;
-  line-height: 1.3;
-  padding-top: 8px;
-  font-size: 1.0rem;
-  max-width: 500px;
-  height: 180px;
-  margin-left: 20px;
+width: 45rem;
+font-weight: 500;
+color: #111;
+line-height: 1.3;
+padding-top: 8px;
+font-size: 1.0rem;
+max-width: 500px;
+height: 180px;
+margin-left: 20px;
 }
 .description p{
-  font-size: 20px;
-  font-weight: 800;
+font-size: 20px;
+font-weight: 800;
 }
-.buttons{
-  margin-left: 20px;
-  
+/* Buttons */
+.buttons {
+margin-left: 20px;
+display: flex;
+gap: 15px;
 }
-.buttons .buttons_1{
-  cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
-  color: #111;
-  background-color: rgb(212, 200, 200);
-  border: none;
-  border-radius: 5px;
+
+.buttons button {
+cursor: pointer;
+font-size: 18px;
+font-weight: 700;
+padding: 12px 28px;
+border: none;
+border-radius: 6px;
+transition: all 0.3s ease;
+box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
 }
-.buttons .buttons_2{
-  cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
-  color: #111;
-  margin-left: 20px;
-  background-color: rgb(132, 124, 124);
-  border: none;
-  border-radius: 5px;
+
+/* Play button */
+.buttons .buttons_1 {
+background: linear-gradient(135deg, #e50914, #ff3c3c);
+color: #fff;
 }
+
+.buttons .buttons_1:hover {
+transform: scale(1.08);
+box-shadow: 0px 6px 16px rgba(229, 9, 20, 0.6);
+}
+
+/* My List button */
+.buttons .buttons_2 {
+background: linear-gradient(135deg, #333, #555);
+color: #fff;
+}
+
+.buttons .buttons_2:hover {
+transform: scale(1.08);
+box-shadow: 0px 6px 16px rgba(100, 100, 100, 0.6);
+}
+
 .navbar{
-  background-color: #111;
+background-color: #111;
 }
 .navbar ul{
-  overflow: auto;
-  padding-left: 150px;
+overflow: auto;
+padding-left: 150px;
 }
 .navbar li{
-  float: left;
-  list-style: none;
-  margin: 12px 15px;
- 
+float: left;
+list-style: none;
+margin: 12px 15px;
+
 }
 .navbar li a{
-  padding: 2px 2px;
-  text-decoration: none;
-  color: #fff;
+padding: 2px 2px;
+text-decoration: none;
+color: #fff;
 }
 .navbar li a :hover{
-  color: gray;
+color: gray;
 
 
 }
 .search
 {
-  padding: 10px;
-  padding-left: 1050px;
-  width: 100px;
+padding: 10px;
+padding-left: 1050px;
+width: 100px;
 }
 .navbar input{
-  width: 200px;
-  outline: none;
+width: 200px;
+outline: none;
 }
