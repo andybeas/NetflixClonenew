@@ -84,29 +84,53 @@ body{
   font-size: 20px;
   font-weight: 800;
 }
-.buttons{
+.buttons {
   margin-left: 20px;
-  
+  display: flex;
+  gap: 15px;
 }
-.buttons .buttons_1{
+
+.buttons .buttons_1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
   color: #111;
-  background-color: rgb(212, 200, 200);
+  background-color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
 }
-.buttons .buttons_2{
+
+.buttons .buttons_1:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.buttons .buttons_2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
-  color: #111;
-  margin-left: 20px;
-  background-color: rgb(132, 124, 124);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(109, 109, 110, 0.7);
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
 }
+
+.buttons .buttons_2:hover {
+  background-color: rgba(51, 51, 51, 0.8);
+  transform: scale(1.05);
+}
+
+.navbar{
 .navbar {
   background-color: #111;
 }
