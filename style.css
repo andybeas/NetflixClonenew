@@ -84,58 +84,88 @@ body{
   font-size: 20px;
   font-weight: 800;
 }
-.buttons{
+.buttons {
   margin-left: 20px;
-  
+  display: flex;
+  gap: 15px;
 }
-.buttons .buttons_1{
+
+.buttons .buttons_1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
   color: #111;
-  background-color: rgb(212, 200, 200);
+  background-color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
 }
-.buttons .buttons_2{
+
+.buttons .buttons_1:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.05);
+}
+
+.buttons .buttons_2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
-  font-size: 35px;
-  font-weight: 800;
-  color: #111;
-  margin-left: 20px;
-  background-color: rgb(132, 124, 124);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: rgba(109, 109, 110, 0.7);
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
 }
+
+.buttons .buttons_2:hover {
+  background-color: rgba(51, 51, 51, 0.8);
+  transform: scale(1.05);
+}
+
 .navbar{
+.navbar {
   background-color: #111;
 }
-.navbar ul{
+
+.navbar ul {
   overflow: auto;
   padding-left: 150px;
 }
-.navbar li{
+
+.navbar li {
   float: left;
   list-style: none;
   margin: 12px 15px;
- 
 }
-.navbar li a{
-  padding: 2px 2px;
+
+.navbar li a {
+  padding: 2px 6px;
   text-decoration: none;
   color: #fff;
-}
-.navbar li a :hover{
-  color: gray;
-
-
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.search {
-  margin-left: auto; /* push to right side of navbar */
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
+/* Correct hover */
+.navbar li a:hover {
+  color: #e50914;   /* Netflix red */
+  transform: scale(1.1);
+}
+
+.search
+{
+  padding: 10px;
+  padding-left: 1050px;
+  width: 100px;
 }
 
 .search input {
