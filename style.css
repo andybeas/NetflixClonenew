@@ -130,13 +130,49 @@ body{
 
 
 }
-.search
-{
-  padding: 10px;
-  padding-left: 1050px;
-  width: 100px;
+.search{
+  position: relative;
+  float: right;
+  margin: 8px 20px 0 0;
+}
+.search::before{
+  content: "\1F50D"; /* magnifying glass */
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b3b3b3;
+  font-size: 14px;
+  pointer-events: none;
 }
 .navbar input{
-  width: 200px;
+  width: 260px;
+  max-width: 60vw;
   outline: none;
+  padding: 10px 14px 10px 40px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  caret-color: #fff;
+  transition: border-color 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.navbar input::placeholder{
+  color: #b3b3b3;
+}
+.navbar input:focus{
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #e50914;
+  box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.3);
+}
+@media (max-width: 768px){
+  .navbar input{
+    width: 160px;
+    padding-left: 36px;
+  }
+  .search{
+    margin: 6px 12px 0 0;
+  }
 }
