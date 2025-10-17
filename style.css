@@ -315,6 +315,74 @@ body {
   transform: scale(1.05);
 }
 
+.navbar {
+  .navbar {
+    background-color: #111;
+  }
+
+  .navbar ul {
+    overflow: auto;
+    padding-left: 150px;
+  }
+
+  .navbar li {
+    float: left;
+    list-style: none;
+    margin: 12px 15px;
+  }
+
+  .navbar li a {
+    padding: 2px 6px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  /* Correct hover */
+  .navbar li a:hover {
+    color: #e50914;
+    /* Netflix red */
+    transform: scale(1.1);
+  }
+
+  .search {
+    padding: 10px;
+    padding-left: 1050px;
+    width: 100px;
+  }
+
+  .search input {
+    padding: 8px 12px 8px 35px;
+    /* extra left padding for icon */
+    border-radius: 20px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: white;
+    width: 220px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .search input:focus {
+    outline: none;
+    border-color: #888;
+    background-color: #333;
+    width: 280px;
+    /* expand smoothly */
+  }
+
+  /* Optional search icon */
+  .search::before {
+    content: "🔍";
+    position: absolute;
+    margin-left: 10px;
+    color: #aaa;
+    font-size: 16px;
+  }
+}
+
 #backToTop {
   display: none;
   position: fixed;

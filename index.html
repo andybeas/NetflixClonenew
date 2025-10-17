@@ -19,14 +19,7 @@
     <header>
         <nav class="navbar">
             <img class="navbar-logo" id="icon" src="./images/netflixlogo-removebg-preview.png" alt="Netflix">
-            
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <ul class="nav-menu" id="navMenu">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">TV Shows</a></li>
                 <li><a href="#">Movies</a></li>
@@ -152,7 +145,6 @@
     <button id="backToTop" title="Go to top">↑</button>
 
     <script>
-        // Back to top button
         const topButton = document.getElementById("backToTop");
 
         window.onscroll = function () {
@@ -165,32 +157,6 @@
 
         topButton.addEventListener("click", () => {
             window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        // Hamburger menu
-        const hamburgerBtn = document.getElementById("hamburgerBtn");
-        const navMenu = document.getElementById("navMenu");
-
-        hamburgerBtn.addEventListener("click", () => {
-            hamburgerBtn.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
-
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll("a");
-        navLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                hamburgerBtn.classList.remove("active");
-                navMenu.classList.remove("active");
-            });
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener("click", (e) => {
-            if (!hamburgerBtn.contains(e.target) && !navMenu.contains(e.target)) {
-                hamburgerBtn.classList.remove("active");
-                navMenu.classList.remove("active");
-            }
         });
     </script>
 
