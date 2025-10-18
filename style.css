@@ -9,7 +9,178 @@ body {
   padding-top: 20px;
   height: 55px;
   width: 100px;
-  margin-bottom: -65px;
+  z-index: 1001;
+  position: relative;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.nav-menu li a {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: block;
+}
+
+.nav-menu li a:hover {
+  color: #e50914;
+  transform: scale(1.1);
+}
+
+/* Search Bar */
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search input {
+  padding: 8px 12px 8px 35px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background-color: #222;
+  color: white;
+  width: 220px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #888;
+  background-color: #333;
+  width: 280px;
+}
+
+.search::before {
+  content: "🔍";
+  position: absolute;
+  left: 10px;
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    flex-direction: column;
+    background-color: #111;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    padding-top: 80px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    gap: 0;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-menu li a {
+    padding: 20px 30px;
+    width: 100%;
+  }
+
+  .nav-menu li a:hover {
+    background-color: #222;
+    transform: scale(1);
+  }
+
+  .search {
+    margin-right: 60px;
+  }
+
+  .search input {
+    width: 150px;
+  }
+
+  .search input:focus {
+    width: 180px;
+  }
+
+  #icon {
+    padding-left: 10px;
+    height: 45px;
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search {
+    display: none;
+  }
 }
 
 .row_posters_org img {
