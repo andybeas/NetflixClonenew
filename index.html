@@ -2,180 +2,145 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/netflixlog.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/netflixlog.png">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone — Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Nav bar -->
-    <header>
-        <nav class="navbar">
-            <img class="navbar-logo" id="icon" src="./images/netflixlogo-removebg-preview.png" alt="Netflix">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">New & Popular</a></li>
-                <li><a href="#">My List</a></li>
-                <li><a href="#">Language</a></li>
-            </ul>
-            <div class="search">
-                <input type="text" name="search" id="search" placeholder="Search">
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
+      </div>
 
-    <!-- Header -->
-    <div class="banner">
-        <div class="content">
-            <h1 class="title">Breaking Bad</h1>
-            <div class="buttons">
-                <button class="buttons_1">▶ Play</button>
-                <button class="buttons_2">+ Add to My List</button>
-            </div>
-            <div class="description">
-                <p>When a terminal diagnosis shatters his quiet life, a struggling chemistry teacher unleashes his
-                    genius in ways no one could imagine. What begins as desperation soon becomes destiny. Watch the
-                    evolution of a man who rewrote the rules — only on Netflix.
-                </p>
-            </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">New &amp; Popular</a></li>
+        <li><a href="#">My List</a></li>
+        <li><a href="#">Languages</a></li>
+      </ul>
+
+      <div class="search" role="search">
+        <input type="search" placeholder="Search" aria-label="Search" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <div class="container banner-inner">
+      <div class="banner-content">
+        <h1 class="title">Breaking Bad</h1>
+        <p class="desc">When a terminal diagnosis shatters his quiet life, a struggling chemistry teacher unleashes
+          his genius in ways no one could imagine. What begins as desperation soon becomes destiny.</p>
+        <div class="buttons">
+          <button class="btn btn-play">▶ Play</button>
+          <button class="btn btn-list">+ Add to My List</button>
         </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Netflix Originals -->
-    <div class="row1">
-        <h2>Netflix Originals</h2>
-        <div class="row_posters_org">
-            <img src="./images/ds2.jpg" alt="Dark" />
-            <img src="./images/mh.webp" alt="Money Heist" />
-            <img src="./images/friends.jpg" alt="Friends" />
-            <img src="./images/lak.jpg" alt="Lucifer" />
-            <img src="./images/hoc.jpg" alt="House of Cards" />
-            <img src="./images/dn.webp" alt="Death Note" />
-            <img src="./images/ns.jpg" alt="Narcos" />
-            <img src="./images/mha.png" alt="My Hero Academia" />
-            <img src="./images/st2.jpg" alt="Stranger Things" />
-        </div>
+  <!-- SECTIONS -->
+  <section class="section">
+    <h2>Netflix Originals</h2>
+    <div class="posters" aria-label="Netflix Originals">
+      <img src="./images/ds2.jpg" alt="Dark poster">
+      <img src="./images/mh.webp" alt="Money Heist poster">
+      <img src="./images/friends.jpg" alt="Friends poster">
+      <img src="./images/lak.jpg" alt="Lucifer poster">
+      <img src="./images/hoc.jpg" alt="House of Cards poster">
+      <img src="./images/dn.webp" alt="Death Note poster">
+      <img src="./images/ns.jpg" alt="Narcos poster">
+      <img src="./images/mha.png" alt="My Hero Academia poster">
+      <img src="./images/st2.jpg" alt="Stranger Things poster">
     </div>
+  </section>
 
-    <!-- Trending Now -->
-    <div class="row">
-        <h2>Trending Now</h2>
-        <div class="row_posters_tre">
-            <img src="./images/ds.jpg" alt="Dark" />
-            <img src="./images/friends.jpg" alt="Friends" />
-            <img src="./images/lak.jpg" alt="Lucifer" />
-            <img src="./images/hoc.jpg" alt="House of Cards" />
-            <img src="./images/dn.webp" alt="Death Note" />
-            <img src="./images/ns.jpg" alt="Narcos" />
-            <img src="./images/dn2.jpg" alt="Death Note 2" />
-            <img src="./images/ns2.jpg" alt="Narcos 2" />
-            <img src="./images/mha2.jpeg" alt="My Hero Academia 2" />
-        </div>
+  <section class="section">
+    <h2>Trending Now</h2>
+    <div class="posters" aria-label="Trending Now">
+      <img src="./images/ds.jpg" alt="Dark poster">
+      <img src="./images/friends.jpg" alt="Friends poster">
+      <img src="./images/lak.jpg" alt="Lucifer poster">
+      <img src="./images/hoc.jpg" alt="House of Cards poster">
+      <img src="./images/dn.webp" alt="Death Note poster">
+      <img src="./images/ns.jpg" alt="Narcos poster">
+      <img src="./images/dn2.jpg" alt="Death Note 2 poster">
+      <img src="./images/ns2.jpg" alt="Narcos 2 poster">
+      <img src="./images/mha2.jpeg" alt="My Hero Academia 2 poster">
     </div>
-    <!-- Continue Watching -->
-    <div class="row continue-watching">
-        <h2>Continue Watching</h2>
-        <div class="row_posters_continue">
-            <div class="continue-item">
-                <img src="./images/st2.jpg" alt="Stranger Things" />
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 65%"></div>
-                </div>
-                <div class="continue-info">
-                    <span class="episode-info">S4 E7</span>
-                    <span class="time-left">32 min left</span>
-                </div>
-            </div>
+  </section>
 
-            <div class="continue-item">
-                <img src="./images/ds2.jpg" alt="Dark" />
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 23%"></div>
-                </div>
-                <div class="continue-info">
-                    <span class="episode-info">S2 E3</span>
-                    <span class="time-left">45 min left</span>
-                </div>
-            </div>
+  <section class="section">
+    <h2>Continue Watching</h2>
+    <div class="continue-list" aria-label="Continue watching list">
 
-            <div class="continue-item">
-                <img src="./images/mh.webp" alt="Money Heist" />
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 87%"></div>
-                </div>
-                <div class="continue-info">
-                    <span class="episode-info">S3 E8</span>
-                    <span class="time-left">8 min left</span>
-                </div>
-            </div>
+      <div class="continue-card">
+        <img src="./images/st2.jpg" alt="Stranger Things">
+        <div class="progress"><i style="width:65%;"></i></div>
+        <div class="meta"><span>S4 E7</span><span>32 min left</span></div>
+      </div>
 
-            <div class="continue-item">
-                <img src="./images/friends.jpg" alt="Friends" />
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 42%"></div>
-                </div>
-                <div class="continue-info">
-                    <span class="episode-info">S7 E12</span>
-                    <span class="time-left">25 min left</span>
-                </div>
-            </div>
+      <div class="continue-card">
+        <img src="./images/ds2.jpg" alt="Dark">
+        <div class="progress"><i style="width:23%;"></i></div>
+        <div class="meta"><span>S2 E3</span><span>45 min left</span></div>
+      </div>
 
-            <div class="continue-item">
-                <img src="./images/hoc.jpg" alt="House of Cards" />
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 76%"></div>
-                </div>
-                <div class="continue-info">
-                    <span class="episode-info">S4 E5</span>
-                    <span class="time-left">15 min left</span>
-                </div>
-            </div>
-        </div>
+      <div class="continue-card">
+        <img src="./images/mh.webp" alt="Money Heist">
+        <div class="progress"><i style="width:87%;"></i></div>
+        <div class="meta"><span>S3 E8</span><span>8 min left</span></div>
+      </div>
+
+      <div class="continue-card">
+        <img src="./images/friends.jpg" alt="Friends">
+        <div class="progress"><i style="width:42%;"></i></div>
+        <div class="meta"><span>S7 E12</span><span>25 min left</span></div>
+      </div>
+
+      <div class="continue-card">
+        <img src="./images/hoc.jpg" alt="House of Cards">
+        <div class="progress"><i style="width:76%;"></i></div>
+        <div class="meta"><span>S4 E5</span><span>15 min left</span></div>
+      </div>
+
     </div>
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top">↑</button>
+  </section>
 
-    <script>
-        const topButton = document.getElementById("backToTop");
+  <button id="backToTop" title="Go to top">↑</button>
 
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                topButton.style.display = "block";
-            } else {
-                topButton.style.display = "none";
-            }
-        };
+  <footer>
+    <div class="footer-content">
+      <p>Questions? Call <a href="#">000-800-919-1694</a></p>
+      <ul class="footer-links">
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Cookie Preferences</a></li>
+        <li><a href="#">Corporate Information</a></li>
+      </ul>
+      <p class="copyright">© 2025 Netflix Clone by Sandhit</p>
+    </div>
+  </footer>
 
-        topButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>Questions? Call <a href="#">000-800-919-1694</a></p>
-            <ul class="footer-links">
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Cookie Preferences</a></li>
-                <li><a href="#">Corporate Information</a></li>
-            </ul>
-            <p class="footer-copy">© 2025 Netflix Clone by Sandhit</p>
-        </div>
-    </footer>
-
+  <script src="app.js"></script>
 </body>
 
 </html>
