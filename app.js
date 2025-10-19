@@ -46,3 +46,17 @@ rows.forEach(row => {
   // make container focusable
   row.setAttribute('tabindex', '0');
 });
+
+const intro = document.getElementById("intro");
+const mainContent = document.getElementById("mainContent");
+const video = document.getElementById("introVideo");
+
+video.addEventListener("ended", () => {
+  intro.style.transition = "opacity 1s";
+  intro.style.opacity = 0;
+
+  setTimeout(() => {
+    intro.style.display = "none";
+    mainContent.style.display = "block";
+  }, 1000);
+});
