@@ -95,13 +95,49 @@ header{background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0)); posit
 .posters img:hover{transform:scale(1.12)}
 
 /* Continue Watching uses cards */
-.continue-list{display:flex; gap:12px; overflow-x:auto}
-.continue-card{min-width:220px; background:var(--card); border-radius:8px; padding:8px}
-.continue-card img{width:100%; border-radius:6px}
-.progress{background:#333; height:8px; border-radius:8px; margin-top:8px; overflow:hidden}
-.progress > i{display:block; height:100%}
-
-.meta{display:flex; justify-content:space-between; margin-top:8px; color:var(--muted); font-size:13px}
+  .continue-list{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:8px 0 16px;
+    }
+    .continue-card{
+      min-width:240px;
+      background:var(--card);
+      border-radius:6px;
+      overflow:hidden;
+      transition:transform 0.3s;
+      cursor:pointer;
+    }
+    .continue-card:hover{transform:scale(1.05)}
+    
+    .continue-card img{
+      width:100%;
+      height:135px;
+      object-fit:cover;
+      display:block;
+    }
+    .card-info{padding:12px}
+    .progress{
+      background:#333;
+      height:4px;
+      border-radius:4px;
+      overflow:hidden;
+      margin-bottom:8px;
+    }
+    .progress > i{
+      display:block;
+      height:100%;
+      background:var(--netflix-red);
+      transition:width 0.3s;
+    }
+    .meta{
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:13px;
+    }
 
 /* footer */
 footer{background:var(--surface); padding:36px 20px; color:var(--muted)}
