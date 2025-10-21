@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Netflix Clone — TV Shows</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="mainContent">
+    <header>
+      <nav class="navbar">
+        <div class="brand">
+          <a href="index.html">
+            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tv-shows.html" class="active">TV Shows</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="#">New & Popular</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
+
+        <div class="search" role="search">
+          <input type="search" placeholder="Search TV Shows" aria-label="Search TV Shows" />
+        </div>
+      </nav>
+    </header>
+
+    <!-- Featured TV Show -->
+    <section class="banner" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
+                    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
+                    url('./images/bb2.jpg');">
+      <div class="container banner-inner">
+        <div class="banner-content">
+          <h1 class="title">Breaking Bad</h1>
+          <p class="desc">A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
+          <div class="buttons">
+            <button class="btn btn-play">▶ Play</button>
+            <button class="btn btn-list">+ My List</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TV Show Categories -->
+    <section class="section">
+      <h2>Trending Now</h2>
+      <div class="posters">
+        <img src="./images/st2.jpg" alt="Stranger Things">
+        <img src="./images/sthings.jpeg" alt="Stranger Things">
+        <img src="./images/mh.webp" alt="Money Heist">
+        <img src="./images/ds2.jpg" alt="Dark">
+        <img src="./images/ds.jpg" alt="Dark">
+        <img src="./images/friends.jpg" alt="Friends">
+        <img src="./images/lak.jpg" alt="Lucifer">
+        <img src="./images/hoc.jpg" alt="House of Cards">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Popular on Netflix</h2>
+      <div class="posters">
+        <img src="./images/ns.jpg" alt="Narcos">
+        <img src="./images/ns2.jpg" alt="Narcos">
+        <img src="./images/dn.webp" alt="Death Note">
+        <img src="./images/dn2.jpg" alt="Death Note">
+        <img src="./images/mh.webp" alt="Money Heist">
+        <img src="./images/st2.jpg" alt="Stranger Things">
+        <img src="./images/sthings.jpeg" alt="Stranger Things">
+        <img src="./images/mha.png" alt="My Hero Academia">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>New Releases</h2>
+      <div class="posters">
+        <img src="./images/mha2.jpeg" alt="My Hero Academia New Season">
+        <img src="./images/sexed.jpg" alt="Sex Education">
+        <img src="./images/st3.jpg" alt="Stranger Things New Season">
+        <img src="./images/ns2.jpg" alt="Narcos New Season">
+        <img src="./images/ds2.jpg" alt="Dark New Season">
+        <img src="./images/mha.png" alt="My Hero Academia">
+        <img src="./images/dn2.jpg" alt="Death Note New Season">
+        <img src="./images/ns.jpg" alt="Narcos">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Watch Again</h2>
+      <div class="continue-list">
+        <div class="continue-card">
+          <img src="./images/st2.jpg" alt="Stranger Things">
+          <div class="progress"><i style="width:65%;"></i></div>
+          <div class="meta"><span>S4 E7</span><span>18 min left</span></div>
+        </div>
+        <div class="continue-card">
+          <img src="./images/mh.webp" alt="Money Heist">
+          <div class="progress"><i style="width:45%;"></i></div>
+          <div class="meta"><span>S2 E3</span><span>32 min left</span></div>
+        </div>
+        <div class="continue-card">
+          <img src="./images/ds2.jpg" alt="Dark">
+          <div class="progress"><i style="width:85%;"></i></div>
+          <div class="meta"><span>S3 E4</span><span>8 min left</span></div>
+        </div>
+        <div class="continue-card">
+          <img src="./images/ns.jpg" alt="Narcos">
+          <div class="progress"><i style="width:25%;"></i></div>
+          <div class="meta"><span>S2 E1</span><span>45 min left</span></div>
+        </div>
+      </div>
+    </section>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <footer>
+      <div class="footer-content">
+        <p>Questions? Call <a href="#">000-800-919-1694</a></p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+          <li><a href="#">Corporate Information</a></li>
+        </ul>
+        <p class="copyright">© 2025 Netflix Clone by Sandhit</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
