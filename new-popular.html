@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New & Popular - Netflix Clone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="new-popular.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="mainContent">
+    <header>
+      <nav class="navbar">
+        <div class="brand">
+          <a href="index.html">
+            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
+          </a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">TV Shows</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="new-popular.html" class="active">New &amp; Popular</a></li>
+          <li><a href="my-list.html">My List</a></li>
+          <li><a href="languages.html">Languages</a></li>
+        </ul>
+
+        <div class="search" role="search">
+          <input type="search" placeholder="Search" aria-label="Search" />
+        </div>
+      </nav>
+    </header>
+
+    <!-- New & Popular Section -->
+    <main class="new-popular-page">
+      <div class="container">
+        <h1 class="page-title">New & Popular</h1>
+        
+        <!-- New Releases Section -->
+        <section class="showcase-section">
+          <div class="section-header">
+            <h2>New Releases</h2>
+            <div class="section-nav">
+              <button class="nav-arrow left" aria-label="Scroll left">❮</button>
+              <button class="nav-arrow right" aria-label="Scroll right">❯</button>
+            </div>
+          </div>
+          <div class="showcase-scroll-container">
+            <div class="showcase-scroll">
+              <!-- Row 1 -->
+              <div class="showcase-row">
+                <!-- Card 1 -->
+                <div class="showcase-card" data-show-id="show1">
+                  <div class="card-image">
+                    <img src="./images/sthings.jpeg" alt="Stranger Things">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>Stranger Things</h3>
+                      <div class="card-meta">
+                        <span class="match">98% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">3 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Sci-Fi</span>
+                        <span>Horror</span>
+                        <span>Drama</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="showcase-card" data-show-id="show2">
+                  <div class="card-image">
+                    <img src="./images/mh.webp" alt="Money Heist">
+                    <div class="showcase-badge">Popular</div>
+                    <div class="card-hover">
+                      <h3>Money Heist</h3>
+                      <div class="card-meta">
+                        <span class="match">95% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">5 Parts</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Thriller</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="showcase-card" data-show-id="show3">
+                  <div class="card-image">
+                    <img src="./images/ds2.jpg" alt="Dark">
+                    <div class="showcase-badge">Trending</div>
+                    <div class="card-hover">
+                      <h3>Dark</h3>
+                      <div class="card-meta">
+                        <span class="match">97% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">3 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Sci-Fi</span>
+                        <span>Thriller</span>
+                        <span>Mystery</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="showcase-card" data-show-id="show4">
+                  <div class="card-image">
+                    <img src="./images/ns2.jpg" alt="Narcos">
+                    <div class="showcase-badge">Popular</div>
+                    <div class="card-hover">
+                      <h3>Narcos</h3>
+                      <div class="card-meta">
+                        <span class="match">96% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">3 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Biography</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 5 -->
+                <div class="showcase-card" data-show-id="show5">
+                  <div class="card-image">
+                    <img src="./images/bb2.jpg" alt="Breaking Bad">
+                    <div class="showcase-badge">Classic</div>
+                    <div class="card-hover">
+                      <h3>Breaking Bad</h3>
+                      <div class="card-meta">
+                        <span class="match">99% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">5 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Thriller</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Card 6 -->
+                <div class="showcase-card" data-show-id="show6">
+                  <div class="card-image">
+                    <img src="./images/hoc.jpg" alt="House of Cards">
+                    <div class="showcase-badge">Popular</div>
+                    <div class="card-hover">
+                      <h3>House of Cards</h3>
+                      <div class="card-meta">
+                        <span class="match">94% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">6 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Drama</span>
+                        <span>Thriller</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add btn-add-to-list" title="Add to My List">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/mha.png" alt="My Hero Academia">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>My Hero Academia</h3>
+                      <div class="card-meta">
+                        <span class="match">97% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">5 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Animation</span>
+                        <span>Action</span>
+                        <span>Adventure</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/st2.jpg" alt="Stranger Things">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>Stranger Things</h3>
+                      <div class="card-meta">
+                        <span class="match">99% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">4 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Drama</span>
+                        <span>Fantasy</span>
+                        <span>Horror</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/ns.jpg" alt="Narcos">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>Narcos: New Season</h3>
+                      <div class="card-meta">
+                        <span class="match">96% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">3 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Biography</span>
+                        <span>Crime</span>
+                        <span>Drama</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/mh.webp" alt="Money Heist">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>Money Heist</h3>
+                      <div class="card-meta">
+                        <span class="match">95% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">5 Parts</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Mystery</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/dn.webp" alt="Death Note">
+                    <div class="showcase-badge">New</div>
+                    <div class="card-hover">
+                      <h3>Death Note</h3>
+                      <div class="card-meta">
+                        <span class="match">98% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">1 Season</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Animation</span>
+                        <span>Crime</span>
+                        <span>Drama</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Trending Now Section -->
+        <section class="showcase-section">
+          <div class="section-header">
+            <h2>Trending Now</h2>
+            <div class="section-nav">
+              <button class="nav-arrow left" aria-label="Scroll left">❮</button>
+              <button class="nav-arrow right" aria-label="Scroll right">❯</button>
+            </div>
+          </div>
+          <div class="showcase-scroll-container">
+            <div class="showcase-scroll">
+              <div class="showcase-row">
+                <!-- Card 1 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/mh.webp" alt="Money Heist">
+                    <div class="showcase-badge trending">Trending #1</div>
+                    <div class="card-hover">
+                      <h3>Money Heist</h3>
+                      <div class="card-meta">
+                        <span class="match">95% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">5 Parts</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Mystery</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/friends.jpg" alt="Friends">
+                    <div class="showcase-badge trending">Trending #2</div>
+                    <div class="card-hover">
+                      <h3>Friends</h3>
+                      <div class="card-meta">
+                        <span class="match">97% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">10 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Comedy</span>
+                        <span>Romance</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/lak.jpg" alt="Lucifer">
+                    <div class="showcase-badge trending">Trending #3</div>
+                    <div class="card-hover">
+                      <h3>Lucifer</h3>
+                      <div class="card-meta">
+                        <span class="match">94% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">6 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Crime</span>
+                        <span>Drama</span>
+                        <span>Fantasy</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/dn.webp" alt="Death Note">
+                    <div class="showcase-badge trending">Trending #4</div>
+                    <div class="card-hover">
+                      <h3>Death Note</h3>
+                      <div class="card-meta">
+                        <span class="match">98% Match</span>
+                        <span class="rating">TV-14</span>
+                        <span class="duration">1 Season</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Animation</span>
+                        <span>Crime</span>
+                        <span>Drama</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/hoc.jpg" alt="House of Cards">
+                    <div class="showcase-badge trending">Trending #5</div>
+                    <div class="card-hover">
+                      <h3>House of Cards</h3>
+                      <div class="card-meta">
+                        <span class="match">93% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">6 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Drama</span>
+                        <span>Thriller</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="showcase-card">
+                  <div class="card-image">
+                    <img src="./images/ns2.jpg" alt="Narcos: Mexico">
+                    <div class="showcase-badge trending">Trending #6</div>
+                    <div class="card-hover">
+                      <h3>Narcos: Mexico</h3>
+                      <div class="card-meta">
+                        <span class="match">96% Match</span>
+                        <span class="rating">TV-MA</span>
+                        <span class="duration">3 Seasons</span>
+                      </div>
+                      <div class="card-genres">
+                        <span>Biography</span>
+                        <span>Crime</span>
+                        <span>Drama</span>
+                      </div>
+                      <div class="card-actions">
+                        <button class="btn-action play">▶ Play</button>
+                        <button class="btn-action add">+</button>
+                        <button class="btn-action like">👍</button>
+                        <button class="btn-action info">ⓘ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>Questions? Call <a href="#">000-800-919-1694</a></p>
+        <ul class="footer-links">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+          <li><a href="#">Corporate Information</a></li>
+        </ul>
+        <p class="copyright"> 2025 Netflix Clone by Sandhit</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="new-popular.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,476 @@
+/* My List Page Styles */
+:root {
+    --netflix-red: #e50914;
+    --netflix-dark: #141414;
+    --netflix-gray: #333;
+    --netflix-light: #e5e5e5;
+    --card-width: 200px;
+    --card-height: 300px;
+}
+
+/* Base Styles */
+.my-list-container {
+    background-color: var(--netflix-dark);
+    color: white;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
+    padding: 20px 4%;
+    transition: background-color 0.3s;
+}
+
+.header.scrolled {
+    background-color: var(--netflix-dark);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: var(--netflix-light);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--netflix-red);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Main Content */
+.my-list-content {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin: 0 0 30px;
+    font-weight: 700;
+    color: white;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(42, 42, 42, 0.3);
+    border-radius: 8px;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.empty-icon {
+    font-size: 80px;
+    color: var(--netflix-red);
+    margin-bottom: 20px;
+}
+
+.empty-state h2 {
+    font-size: 1.8rem;
+    margin: 0 0 10px;
+}
+
+.empty-state p {
+    color: #999;
+    margin: 0 0 30px;
+    font-size: 1.1rem;
+}
+
+.btn-browse {
+    background: var(--netflix-red);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-browse:hover {
+    background: #f40612;
+    transform: scale(1.03);
+}
+
+/* List Grid */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.list-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.list-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-sort,
+.btn-filter {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-sort:hover,
+.btn-filter:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.list-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* List Item Card */
+.list-item {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--netflix-gray);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.list-item-image {
+    width: 100%;
+    height: var(--card-height);
+    object-fit: cover;
+    display: block;
+}
+
+.list-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.list-item:hover .list-item-overlay {
+    opacity: 1;
+}
+
+.list-item-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: white;
+}
+
+.list-item-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.list-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-action {
+    background: rgba(42, 42, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.btn-remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background 0.2s;
+}
+
+.list-item:hover .btn-remove {
+    opacity: 1;
+}
+
+.btn-remove:hover {
+    background: var(--netflix-red);
+}
+
+/* Recommendations Section */
+.recommendations {
+    margin-top: 50px;
+}
+
+.recommendations h2 {
+    font-size: 1.5rem;
+    margin: 0 0 20px;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .list-items {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --card-height: 270px;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .empty-state {
+        padding: 40px 20px;
+        min-height: 300px;
+    }
+    
+    .empty-icon {
+        font-size: 60px;
+    }
+    
+    .empty-state h2 {
+        font-size: 1.5rem;
+    }
+    
+    .empty-state p {
+        font-size: 1rem;
+    }
+    
+    .list-items {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 4%;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .list-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .list-items,
+    .recommendations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+    
+    .list-item-overlay {
+        padding: 10px;
+    }
+    
+    .list-item-title {
+        font-size: 0.9rem;
+    }
+    
+    .list-item-meta {
+        font-size: 0.75rem;
+    }
+    
+    .btn-action {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --card-height: 240px;
+    }
+    
+    .logo img {
+        height: 35px;
+    }
+    
+    .profile img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .empty-state {
+        padding: 30px 15px;
+        min-height: 250px;
+    }
+    
+    .empty-icon {
+        font-size: 50px;
+    }
+    
+    .empty-state h2 {
+        font-size: 1.3rem;
+    }
+    
+    .empty-state p {
+        font-size: 0.95rem;
+    }
+    
+    .btn-browse {
+        padding: 10px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .list-items,
+    .recommendations-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+    
+    .list-item-actions {
+        gap: 8px;
+    }
+    
+    .btn-action {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+    
+    .btn-remove {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+}

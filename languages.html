@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages - Netflix Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="languages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="languages-page">
+        <!-- Header -->
+        <header>
+            <nav class="navbar">
+                <div class="brand">
+                    <a href="index.html">
+                        <span class="logo-text">NETFLIX</span>
+                    </a>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="new-popular.html">New &amp; Popular</a></li>
+                    <li><a href="my-list.html">My List</a></li>
+                    <li><a href="languages.html" class="active">Languages</a></li>
+                </ul>
+
+                <div class="search" role="search">
+                    <input type="search" placeholder="Search" aria-label="Search" />
+                </div>
+
+                <div class="profile">
+                    <img src="images/profile-icon.png" alt="Profile">
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="languages-content">
+            <div class="container">
+                <h1 class="page-title">Browse by Language</h1>
+                
+                <!-- Language Filter -->
+                <div class="language-filter">
+                    <div class="language-tabs" id="languageTabs">
+                        <button class="language-tab active" data-lang="all">All Languages</button>
+                        <button class="language-tab" data-lang="hindi">हिंदी</button>
+                        <button class="language-tab" data-lang="spanish">Español</button>
+                        <button class="language-tab" data-lang="korean">한국어</button>
+                        <button class="language-tab" data-lang="japanese">日本語</button>
+                        <button class="language-tab" data-lang="french">Français</button>
+                        <button class="language-tab" data-lang="german">Deutsch</button>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <section class="language-section" data-lang="hindi">
+                    <div class="section-header">
+                        <h2>Popular in हिंदी</h2>
+                        <a href="#" class="see-all">See All</a>
+                    </div>
+                    <div class="showcase-scroll-container">
+                        <div class="showcase-scroll">
+                            <div class="showcase-row">
+                                <!-- Hindi Content -->
+                                <div class="showcase-card">
+                                    <div class="card-image">
+                                        <img src="./images/bb2.jpg" alt="Sacred Games">
+                                        <div class="showcase-badge">Trending</div>
+                                        <div class="card-hover">
+                                            <h3>Sacred Games</h3>
+                                            <div class="card-meta">
+                                                <span class="match">98% Match</span>
+                                                <span class="rating">TV-MA</span>
+                                                <span class="duration">2 Seasons</span>
+                                            </div>
+                                            <div class="card-actions">
+                                                <button class="btn-action play">▶ Play</button>
+                                                <button class="btn-action add btn-add-to-list">+</button>
+                                                <button class="btn-action like">👍</button>
+                                                <button class="btn-action info">ⓘ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- More Hindi content cards would go here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="language-section" data-lang="spanish">
+                    <div class="section-header">
+                        <h2>Popular en Español</h2>
+                        <a href="#" class="see-all">Ver Todo</a>
+                    </div>
+                    <div class="showcase-scroll-container">
+                        <div class="showcase-scroll">
+                            <div class="showcase-row">
+                                <!-- Spanish Content -->
+                                <div class="showcase-card">
+                                    <div class="card-image">
+                                        <img src="./images/mh.webp" alt="La Casa de Papel">
+                                        <div class="showcase-badge">Popular</div>
+                                        <div class="card-hover">
+                                            <h3>La Casa de Papel</h3>
+                                            <div class="card-meta">
+                                                <span class="match">97% Match</span>
+                                                <span class="rating">TV-MA</span>
+                                                <span class="duration">5 Parts</span>
+                                            </div>
+                                            <div class="card-actions">
+                                                <button class="btn-action play">▶ Reproducir</button>
+                                                <button class="btn-action add btn-add-to-list">+</button>
+                                                <button class="btn-action like">👍</button>
+                                                <button class="btn-action info">ⓘ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- More Spanish content cards would go here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="language-section" data-lang="korean">
+                    <div class="section-header">
+                        <h2>인기 한국어 콘텐츠</h2>
+                        <a href="#" class="see-all">모두 보기</a>
+                    </div>
+                    <div class="showcase-scroll-container">
+                        <div class="showcase-scroll">
+                            <div class="showcase-row">
+                                <!-- Korean Content -->
+                                <div class="showcase-card">
+                                    <div class="card-image">
+                                        <img src="./images/ns2.jpg" alt="Squid Game">
+                                        <div class="showcase-badge">Trending</div>
+                                        <div class="card-hover">
+                                            <h3>오징어 게임</h3>
+                                            <div class="card-meta">
+                                                <span class="match">99% Match</span>
+                                                <span class="rating">TV-MA</span>
+                                                <span class="duration">1 Season</span>
+                                            </div>
+                                            <div class="card-actions">
+                                                <button class="btn-action play">▶ 재생</button>
+                                                <button class="btn-action add btn-add-to-list">+</button>
+                                                <button class="btn-action like">👍</button>
+                                                <button class="btn-action info">ⓘ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- More Korean content cards would go here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- More language sections would go here -->
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Questions? Call <a href="#">000-800-919-1694</a></p>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+                <p class="copyright">© 2025 Netflix Clone</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', function() {
+                    this.setAttribute('aria-expanded', 
+                        this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                    );
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <script src="languages.js"></script>
+</body>
+</html>

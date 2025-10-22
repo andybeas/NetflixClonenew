@@ -1,0 +1,439 @@
+/* Notification Styles */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.notification.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Add to List Button */
+.btn-add-to-list {
+  background: rgba(42, 42, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-add-to-list:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: scale(1.1) !important;
+  border-color: white !important;
+}
+
+.btn-add-to-list.added {
+  background: #e50914 !important;
+  border-color: #e50914 !important;
+  color: white !important;
+}
+
+.btn-add-to-list.added:hover {
+  background: #f40612 !important;
+}
+
+/* New & Popular Page Styles */
+:root {
+  --card-width: 250px;
+  --card-height: 375px;
+  --card-spacing: 8px;
+  --transition-speed: 0.3s;
+  --netflix-red: #e50914;
+  --netflix-dark: #141414;
+  --netflix-gray: #757575;
+  --netflix-light: #e5e5e5;
+}
+
+.new-popular-page {
+  padding: 20px 0 60px;
+  background: var(--netflix-dark);
+  min-height: 100vh;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* Page Header */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1.5rem;
+  color: white;
+}
+
+/* Section Styling */
+.showcase-section {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--netflix-light);
+}
+
+/* Navigation Arrows */
+.section-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.nav-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Scrollable Container */
+.showcase-scroll-container {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 0;
+  margin: 0 -10px;
+}
+
+.showcase-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+}
+
+.showcase-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.showcase-row {
+  display: flex;
+  gap: var(--card-spacing);
+  padding: 0 10px;
+}
+
+/* Card Styling */
+.showcase-card {
+  flex: 0 0 var(--card-width);
+  height: var(--card-height);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Badge Styling */
+.showcase-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--netflix-red);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-badge.trending {
+  background: #46d369;
+}
+
+/* Hover Card Effect */
+.card-hover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
+  padding: 20px 15px 15px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 3;
+}
+
+.showcase-card:hover .card-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.showcase-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+/* Card Content */
+.card-hover h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  color: #46d369;
+}
+
+.card-meta .rating {
+  color: var(--netflix-gray);
+  border: 1px solid var(--netflix-gray);
+  padding: 0 4px;
+  font-size: 0.7rem;
+}
+
+.card-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.card-genres span {
+  font-size: 0.75rem;
+  color: var(--netflix-light);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Action Buttons */
+.card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.btn-action {
+  background: rgba(42, 42, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  padding: 0;
+}
+
+.btn-action.play {
+  background: white;
+  color: black;
+  border-radius: 4px;
+  width: auto;
+  padding: 0 12px;
+  font-weight: 600;
+  min-width: 80px;
+  border: none;
+}
+
+.btn-action.play:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+.btn-action.add:hover,
+.btn-action.like:hover,
+.btn-action.info:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  border-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  :root {
+    --card-width: 220px;
+    --card-height: 330px;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --card-width: 200px;
+    --card-height: 300px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --card-width: 180px;
+    --card-height: 270px;
+    --card-spacing: 6px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .page-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card-hover {
+    padding: 15px 10px 10px;
+  }
+  
+  .card-hover h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-meta {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-genres {
+    margin-bottom: 10px;
+  }
+  
+  .card-genres span {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+  }
+  
+  .btn-action {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-action.play {
+    min-width: 70px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --card-width: 150px;
+    --card-height: 225px;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.1rem;
+  }
+  
+  .nav-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+  
+  .card-hover {
+    padding: 10px 8px 8px;
+  }
+  
+  .card-hover h3 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .card-meta {
+    font-size: 0.65rem;
+    gap: 6px;
+  }
+  
+  .card-genres {
+    display: none; /* Hide genres on very small screens */
+  }
+  
+  .btn-action {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .btn-action.play {
+    min-width: 60px;
+    padding: 0 8px;
+    font-size: 0.8rem;
+  }
+}

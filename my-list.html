@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="my-list.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>My List - Netflix Clone</title>
+</head>
+
+<body>
+    <div class="my-list-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Netflix">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="new-popular.html">New & Popular</a></li>
+                        <li><a href="my-list.html" class="active">My List</a></li>
+                    </ul>
+                </nav>
+                <div class="user-menu">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="profile">
+                        <img src="images/profile-icon.png" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="my-list-content">
+            <div class="container">
+                <h1 class="page-title">My List</h1>
+                
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h2>Your list is empty</h2>
+                    <p>Add your favorite movies and shows to watch later</p>
+                    <a href="new-popular.html" class="btn-browse">Browse New & Popular</a>
+                </div>
+
+                <!-- List Grid -->
+                <div id="listGrid" class="list-grid" style="display: none;">
+                    <div class="list-header">
+                        <h2>Your List</h2>
+                        <div class="list-actions">
+                            <button id="sortButton" class="btn-sort">
+                                <i class="fas fa-sort"></i> Sort
+                            </button>
+                            <button id="filterButton" class="btn-filter">
+                                <i class="fas fa-filter"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                    <div id="listItems" class="list-items">
+                        <!-- Items will be dynamically added here -->
+                    </div>
+                </div>
+
+                <!-- Recommendations Section -->
+                <div class="recommendations">
+                    <h2>Recommended for You</h2>
+                    <div class="recommendations-grid" id="recommendationsGrid">
+                        <!-- Recommended items will be added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Questions? Call <a href="#">000-800-919-1694</a></p>
+                <ul class="footer-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+                <p class="copyright">© 2025 Netflix Clone</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="my-list.js"></script>
+</body>
+</html>
