@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const intro = document.getElementById("intro");
   const mainContent = document.getElementById("mainContent");
   const introVideo = document.getElementById("introVideo");
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeText = document.getElementById('themeText');
 
   // Navbar scroll effect
   let lastScroll = 0;
@@ -121,6 +124,36 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       row.scrollBy({ left: -300, behavior: 'smooth' });
     }
+  }
+
+  // Theme switching functionality
+  function initTheme() {
+    // Get saved theme from localStorage or default to 'dark'
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+  }
+
+  function setTheme(theme) {
+    const root = document.documentElement;
+    
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+      if (themeIcon) themeIcon.textContent = '☀️';
+      if (themeText) themeText.textContent = 'Light';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      if (themeIcon) themeIcon.textContent = '🌙';
+      if (themeText) themeText.textContent = 'Dark';
+    }
+    
+    // Save theme preference
+    localStorage.setItem('theme', theme);
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
   }
 
   // Handle intro video
@@ -291,6 +324,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize intro video handling
     handleIntroVideo();
+    
+    // Initialize theme
+    initTheme();
+    
+    // Theme toggle event listener
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
     
     // Enhance posters with hover effects
     enhancePosters();
