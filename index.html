@@ -4,16 +4,47 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A Netflix Clone featuring movies, TV shows, and trending content with accessibility and responsive design." />
-  <title>Netflix Clone — Home</title>
+  <meta name="description" content="🎬 StreamFlix - Your ultimate streaming destination. Discover trending movies, binge-worthy series, and exclusive content with stunning visuals and seamless experience." />
+  <meta name="keywords" content="streaming, movies, TV shows, entertainment, binge-watch, Netflix alternative" />
+  <meta name="author" content="StreamFlix Team" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://streamflix.com/" />
+  <meta property="og:title" content="StreamFlix - Ultimate Streaming Experience" />
+  <meta property="og:description" content="Discover your next favorite show with our curated collection of movies and series." />
+  <meta property="og:image" content="https://streamflix.com/og-image.jpg" />
+  <meta property="og:site_name" content="StreamFlix" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://streamflix.com/" />
+  <meta property="twitter:title" content="StreamFlix - Ultimate Streaming Experience" />
+  <meta property="twitter:description" content="Discover your next favorite show with our curated collection of movies and series." />
+  <meta property="twitter:image" content="https://streamflix.com/og-image.jpg" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#e50914" />
+  <meta name="msapplication-TileColor" content="#e50914" />
+  
+  <title>🎬 StreamFlix — Your Ultimate Streaming Experience</title>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
 
 <body>
@@ -27,201 +58,988 @@
 
   <!-- Main Content -->
   <div id="mainContent">
-    <header>
+    <header class="header" role="banner">
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="brand">
-          <a href="index.html" aria-label="Netflix Home">
-            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo" />
+          <a href="index.html" aria-label="StreamFlix Home" class="brand-link">
+            <i class="fas fa-play-circle brand-icon" aria-hidden="true"></i>
+            <span class="brand-text">StreamFlix</span>
           </a>
         </div>
 
         <!-- Mobile Menu Toggle -->
         <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
         </button>
 
         <!-- Navigation Links -->
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="tv-shows.html">TV Shows</a></li>
-          <li><a href="movies.html">Movies</a></li>
-          <li><a href="newpopular.html">New &amp; Popular</a></li>
-          <li><a href="#">My List</a></li>
+        <ul class="nav-menu" id="navMenu" role="menubar">
+          <li role="none"><a href="index.html" aria-current="page" role="menuitem" class="nav-link active">
+            <i class="fas fa-home" aria-hidden="true"></i> Home
+          </a></li>
+          <li role="none"><a href="tv-shows.html" role="menuitem" class="nav-link">
+            <i class="fas fa-tv" aria-hidden="true"></i> TV Shows
+          </a></li>
+          <li role="none"><a href="movies.html" role="menuitem" class="nav-link">
+            <i class="fas fa-film" aria-hidden="true"></i> Movies
+          </a></li>
+          <li role="none"><a href="newpopular.html" role="menuitem" class="nav-link">
+            <i class="fas fa-fire" aria-hidden="true"></i> Trending
+          </a></li>
+          <li role="none"><a href="#" role="menuitem" class="nav-link">
+            <i class="fas fa-heart" aria-hidden="true"></i> My List
+          </a></li>
         </ul>
 
         <!-- Search Bar -->
-        <form class="search" role="search" aria-label="Search movies and shows">
-          <input type="search" placeholder="Search" aria-label="Search for titles" />
-        </form>
+        <div class="search-container">
+          <form class="search" role="search" aria-label="Search movies and shows">
+            <div class="search-input-wrapper">
+              <i class="fas fa-search search-icon" aria-hidden="true"></i>
+              <input type="search" placeholder="Search for movies, shows..." aria-label="Search for titles" class="search-input" />
+              <button type="button" class="search-clear" aria-label="Clear search" style="display: none;">
+                <i class="fas fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </div>
 
-        <!-- Theme Toggle -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
-          <span id="themeIcon" aria-hidden="true">🌙</span>
-          <span id="themeText">Dark</span>
-        </button>
+        <!-- User Actions -->
+        <div class="user-actions">
+          <!-- Notifications -->
+          <button class="action-btn notification-btn" aria-label="Notifications" title="Notifications">
+            <i class="fas fa-bell" aria-hidden="true"></i>
+            <span class="notification-badge" aria-hidden="true">3</span>
+          </button>
+
+          <!-- Profile Dropdown -->
+          <div class="profile-dropdown">
+            <button class="action-btn profile-btn" aria-label="User profile" aria-expanded="false" aria-haspopup="true">
+              <img src="./images/profile-avatar.jpg" alt="User profile" class="profile-avatar" />
+              <i class="fas fa-chevron-down dropdown-arrow" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu" role="menu" aria-label="User menu">
+              <a href="#" role="menuitem" class="dropdown-item">
+                <i class="fas fa-user" aria-hidden="true"></i> Profile
+              </a>
+              <a href="#" role="menuitem" class="dropdown-item">
+                <i class="fas fa-cog" aria-hidden="true"></i> Settings
+              </a>
+              <a href="#" role="menuitem" class="dropdown-item">
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Sign Out
+              </a>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+            <span id="themeIcon" aria-hidden="true" class="theme-icon">🌙</span>
+            <span id="themeText" class="theme-text">Dark</span>
+          </button>
+        </div>
       </nav>
     </header>
 
-    <main>
-      <!-- Banner -->
-      <section class="banner" aria-labelledby="banner-title">
+    <main role="main">
+      <!-- Hero Banner -->
+      <section class="banner hero-banner" aria-labelledby="banner-title">
+        <div class="banner-background">
+          <div class="banner-overlay"></div>
+          <div class="banner-gradient"></div>
+        </div>
         <div class="container banner-inner">
           <div class="banner-content">
-            <h1 id="banner-title" class="title">Breaking Bad</h1>
-            <p class="desc">
-              When a terminal diagnosis shatters his quiet life, a struggling chemistry teacher unleashes his genius in ways no one could imagine. What begins as desperation soon becomes destiny.
+            <div class="content-badge">
+              <span class="badge-text">🔥 #1 Trending</span>
+              <span class="badge-separator">•</span>
+              <span class="badge-year">2024</span>
+            </div>
+            <h1 id="banner-title" class="hero-title">
+              <span class="title-main">The Last of Us</span>
+              <span class="title-sub">Season 2</span>
+            </h1>
+            <div class="content-meta">
+              <span class="meta-item">
+                <i class="fas fa-star" aria-hidden="true"></i>
+                <span>9.2/10</span>
+              </span>
+              <span class="meta-item">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span>45 min</span>
+              </span>
+              <span class="meta-item">
+                <i class="fas fa-tag" aria-hidden="true"></i>
+                <span>Drama • Thriller</span>
+              </span>
+            </div>
+            <p class="hero-desc">
+              In a post-apocalyptic world ravaged by a fungal pandemic, Joel and Ellie navigate the dangerous remnants of civilization. As their bond deepens, they must confront both infected creatures and desperate survivors in this gripping tale of survival, love, and the human spirit.
             </p>
-            <div class="buttons">
-              <button class="btn btn-play" aria-label="Play Breaking Bad">▶ Play</button>
-              <button class="btn btn-list" aria-label="Add Breaking Bad to My List">+ Add to My List</button>
+            <div class="hero-actions">
+              <button class="btn btn-primary btn-play" aria-label="Play The Last of Us">
+                <i class="fas fa-play" aria-hidden="true"></i>
+                <span>Play Now</span>
+              </button>
+              <button class="btn btn-secondary btn-info" aria-label="More info about The Last of Us">
+                <i class="fas fa-info-circle" aria-hidden="true"></i>
+                <span>More Info</span>
+              </button>
+              <button class="btn btn-tertiary btn-list" aria-label="Add The Last of Us to My List">
+                <i class="fas fa-plus" aria-hidden="true"></i>
+                <span>My List</span>
+              </button>
+            </div>
+            <div class="content-features">
+              <div class="feature-item">
+                <i class="fas fa-hd-video" aria-hidden="true"></i>
+                <span>4K Ultra HD</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-closed-captioning" aria-hidden="true"></i>
+                <span>Subtitles</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-volume-up" aria-hidden="true"></i>
+                <span>5.1 Audio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-navigation">
+          <button class="nav-arrow nav-prev" aria-label="Previous content">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="nav-arrow nav-next" aria-label="Next content">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- StreamFlix Originals -->
+      <section class="content-section" aria-labelledby="originals-title">
+        <div class="section-header">
+          <h2 id="originals-title" class="section-title">
+            <i class="fas fa-crown" aria-hidden="true"></i>
+            StreamFlix Originals
+          </h2>
+          <div class="section-controls">
+            <button class="control-btn" aria-label="View all originals">
+              <span>View All</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-carousel" role="list" aria-label="StreamFlix Originals">
+          <div class="carousel-container">
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/ds2.jpg" alt="Dark TV show poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Dark">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Dark">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">NEW</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Dark</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.7</span>
+                  <span class="year">2020</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/mh.webp" alt="Money Heist series poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Money Heist">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Money Heist">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge trending">🔥</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Money Heist</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.3</span>
+                  <span class="year">2021</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/st2.jpg" alt="Stranger Things sci-fi poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Stranger Things">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Stranger Things">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">SEASON 4</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Stranger Things</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.7</span>
+                  <span class="year">2022</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/lak.jpg" alt="Lucifer TV show poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Lucifer">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Lucifer">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Lucifer</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.1</span>
+                  <span class="year">2021</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/hoc.jpg" alt="House of Cards political drama poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play House of Cards">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about House of Cards">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">House of Cards</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.7</span>
+                  <span class="year">2018</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Netflix Originals -->
-      <section class="section" aria-labelledby="originals-title">
-        <h2 id="originals-title">Netflix Originals</h2>
-        <div class="posters" role="list" aria-label="List of Netflix Originals">
-          <img src="./images/ds2.jpg" alt="Dark TV show poster" />
-          <img src="./images/mh.webp" alt="Money Heist series poster" />
-          <img src="./images/friends.jpg" alt="Friends sitcom poster" />
-          <img src="./images/lak.jpg" alt="Lucifer TV show poster" />
-          <img src="./images/hoc.jpg" alt="House of Cards political drama poster" />
-          <img src="./images/dn.webp" alt="Death Note anime poster" />
-          <img src="./images/ns.jpg" alt="Narcos crime drama poster" />
-          <img src="./images/mha.png" alt="My Hero Academia anime poster" />
-          <img src="./images/st2.jpg" alt="Stranger Things sci-fi poster" />
-        </div>
-      </section>
-
       <!-- Trending Now -->
-      <section class="section" aria-labelledby="trending-title">
-        <h2 id="trending-title">Trending Now</h2>
-        <div class="posters" role="list" aria-label="Trending Shows and Movies">
-          <img src="./images/ds.jpg" alt="Dark TV show poster" />
-          <img src="./images/friends.jpg" alt="Friends sitcom poster" />
-          <img src="./images/lak.jpg" alt="Lucifer TV show poster" />
-          <img src="./images/hoc.jpg" alt="House of Cards political drama poster" />
-          <img src="./images/dn.webp" alt="Death Note anime poster" />
-          <img src="./images/ns.jpg" alt="Narcos crime drama poster" />
-          <img src="./images/dn2.jpg" alt="Death Note sequel poster" />
-          <img src="./images/ns2.jpg" alt="Narcos season 2 poster" />
-          <img src="./images/mha2.jpeg" alt="My Hero Academia season 2 poster" />
+      <section class="content-section" aria-labelledby="trending-title">
+        <div class="section-header">
+          <h2 id="trending-title" class="section-title">
+            <i class="fas fa-fire" aria-hidden="true"></i>
+            Trending Now
+          </h2>
+          <div class="section-controls">
+            <button class="control-btn" aria-label="View all trending content">
+              <span>View All</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-carousel" role="list" aria-label="Trending Shows and Movies">
+          <div class="carousel-container">
+            <div class="content-card featured" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/ds.jpg" alt="Dark TV show poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Dark">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Dark">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge trending">#1 TRENDING</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Dark</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.7</span>
+                  <span class="year">2020</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/friends.jpg" alt="Friends sitcom poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Friends">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Friends">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">CLASSIC</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Friends</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.9</span>
+                  <span class="year">1994</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/dn.webp" alt="Death Note anime poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Death Note">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Death Note">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">ANIME</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Death Note</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 9.0</span>
+                  <span class="year">2006</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/ns.jpg" alt="Narcos crime drama poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Narcos">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Narcos">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">CRIME</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Narcos</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.8</span>
+                  <span class="year">2015</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/mha.png" alt="My Hero Academia anime poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play My Hero Academia">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about My Hero Academia">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">ANIME</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">My Hero Academia</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.5</span>
+                  <span class="year">2016</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- Continue Watching -->
-      <section class="section" aria-labelledby="continue-title">
-        <h2 id="continue-title">Continue Watching</h2>
-        <div class="continue-list" role="list" aria-label="Continue watching list">
-          <article class="continue-card" role="listitem">
-            <img src="./images/st2.jpg" alt="Stranger Things cover" />
-            <div class="progress" aria-label="Progress 65%"><i style="width:65%;"></i></div>
-            <div class="meta"><span>S4 E7</span><span>32 min left</span></div>
+      <section class="content-section continue-section" aria-labelledby="continue-title">
+        <div class="section-header">
+          <h2 id="continue-title" class="section-title">
+            <i class="fas fa-play-circle" aria-hidden="true"></i>
+            Continue Watching
+          </h2>
+          <div class="section-controls">
+            <button class="control-btn" aria-label="View all continue watching">
+              <span>View All</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="continue-grid" role="list" aria-label="Continue watching list">
+          <article class="continue-card featured" role="listitem" tabindex="0">
+            <div class="card-image">
+              <img src="./images/st2.jpg" alt="Stranger Things cover" />
+              <div class="card-overlay">
+                <button class="play-btn" aria-label="Resume Stranger Things">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="remove-btn" aria-label="Remove from continue watching">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Stranger Things</h3>
+              <div class="progress-container">
+                <div class="progress-bar" aria-label="Progress 65%">
+                  <div class="progress-fill" style="width: 65%"></div>
+                </div>
+                <span class="progress-text">65%</span>
+              </div>
+              <div class="card-meta">
+                <span class="episode">S4 E7</span>
+                <span class="time-left">32 min left</span>
+              </div>
+            </div>
           </article>
 
-          <article class="continue-card" role="listitem">
-            <img src="./images/ds2.jpg" alt="Dark cover" />
-            <div class="progress" aria-label="Progress 23%"><i style="width:23%;"></i></div>
-            <div class="meta"><span>S2 E3</span><span>45 min left</span></div>
+          <article class="continue-card" role="listitem" tabindex="0">
+            <div class="card-image">
+              <img src="./images/ds2.jpg" alt="Dark cover" />
+              <div class="card-overlay">
+                <button class="play-btn" aria-label="Resume Dark">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="remove-btn" aria-label="Remove from continue watching">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Dark</h3>
+              <div class="progress-container">
+                <div class="progress-bar" aria-label="Progress 23%">
+                  <div class="progress-fill" style="width: 23%"></div>
+                </div>
+                <span class="progress-text">23%</span>
+              </div>
+              <div class="card-meta">
+                <span class="episode">S2 E3</span>
+                <span class="time-left">45 min left</span>
+              </div>
+            </div>
           </article>
 
-          <article class="continue-card" role="listitem">
-            <img src="./images/mh.webp" alt="Money Heist cover" />
-            <div class="progress" aria-label="Progress 87%"><i style="width:87%;"></i></div>
-            <div class="meta"><span>S3 E8</span><span>8 min left</span></div>
+          <article class="continue-card" role="listitem" tabindex="0">
+            <div class="card-image">
+              <img src="./images/mh.webp" alt="Money Heist cover" />
+              <div class="card-overlay">
+                <button class="play-btn" aria-label="Resume Money Heist">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="remove-btn" aria-label="Remove from continue watching">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Money Heist</h3>
+              <div class="progress-container">
+                <div class="progress-bar" aria-label="Progress 87%">
+                  <div class="progress-fill" style="width: 87%"></div>
+                </div>
+                <span class="progress-text">87%</span>
+              </div>
+              <div class="card-meta">
+                <span class="episode">S3 E8</span>
+                <span class="time-left">8 min left</span>
+              </div>
+            </div>
           </article>
 
-          <article class="continue-card" role="listitem">
-            <img src="./images/friends.jpg" alt="Friends cover" />
-            <div class="progress" aria-label="Progress 42%"><i style="width:42%;"></i></div>
-            <div class="meta"><span>S7 E12</span><span>25 min left</span></div>
+          <article class="continue-card" role="listitem" tabindex="0">
+            <div class="card-image">
+              <img src="./images/friends.jpg" alt="Friends cover" />
+              <div class="card-overlay">
+                <button class="play-btn" aria-label="Resume Friends">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="remove-btn" aria-label="Remove from continue watching">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Friends</h3>
+              <div class="progress-container">
+                <div class="progress-bar" aria-label="Progress 42%">
+                  <div class="progress-fill" style="width: 42%"></div>
+                </div>
+                <span class="progress-text">42%</span>
+              </div>
+              <div class="card-meta">
+                <span class="episode">S7 E12</span>
+                <span class="time-left">25 min left</span>
+              </div>
+            </div>
           </article>
 
-          <article class="continue-card" role="listitem">
-            <img src="./images/hoc.jpg" alt="House of Cards cover" />
-            <div class="progress" aria-label="Progress 76%"><i style="width:76%;"></i></div>
-            <div class="meta"><span>S4 E5</span><span>15 min left</span></div>
+          <article class="continue-card" role="listitem" tabindex="0">
+            <div class="card-image">
+              <img src="./images/hoc.jpg" alt="House of Cards cover" />
+              <div class="card-overlay">
+                <button class="play-btn" aria-label="Resume House of Cards">
+                  <i class="fas fa-play" aria-hidden="true"></i>
+                </button>
+                <button class="remove-btn" aria-label="Remove from continue watching">
+                  <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">House of Cards</h3>
+              <div class="progress-container">
+                <div class="progress-bar" aria-label="Progress 76%">
+                  <div class="progress-fill" style="width: 76%"></div>
+                </div>
+                <span class="progress-text">76%</span>
+              </div>
+              <div class="card-meta">
+                <span class="episode">S4 E5</span>
+                <span class="time-left">15 min left</span>
+              </div>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <!-- Recently Added -->
+      <section class="content-section" aria-labelledby="recent-title">
+        <div class="section-header">
+          <h2 id="recent-title" class="section-title">
+            <i class="fas fa-plus-circle" aria-hidden="true"></i>
+            Recently Added
+          </h2>
+          <div class="section-controls">
+            <button class="control-btn" aria-label="View all recently added content">
+              <span>View All</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="content-carousel" role="list" aria-label="Recently Added Content">
+          <div class="carousel-container">
+            <div class="content-card new-release" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/dn2.jpg" alt="Death Note sequel poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Death Note 2">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Death Note 2">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge new">NEW</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Death Note 2</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.9</span>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/ns2.jpg" alt="Narcos season 2 poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play Narcos Season 2">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about Narcos Season 2">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">SEASON 2</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">Narcos: Mexico</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.6</span>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-card" role="listitem" tabindex="0">
+              <div class="card-image">
+                <img src="./images/mha2.jpeg" alt="My Hero Academia season 2 poster" />
+                <div class="card-overlay">
+                  <button class="play-btn" aria-label="Play My Hero Academia Season 2">
+                    <i class="fas fa-play" aria-hidden="true"></i>
+                  </button>
+                  <button class="info-btn" aria-label="More info about My Hero Academia Season 2">
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="card-badge">SEASON 2</div>
+              </div>
+              <div class="card-content">
+                <h3 class="card-title">My Hero Academia S2</h3>
+                <div class="card-meta">
+                  <span class="rating">⭐ 8.8</span>
+                  <span class="year">2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top" aria-label="Scroll to top">↑</button>
+    <button id="backToTop" class="back-to-top" title="Go to top" aria-label="Scroll to top">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Quick Actions Floating Menu -->
+    <div class="quick-actions" aria-label="Quick actions menu">
+      <button class="quick-action-btn" aria-label="Search" title="Search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+      <button class="quick-action-btn" aria-label="My List" title="My List">
+        <i class="fas fa-heart" aria-hidden="true"></i>
+      </button>
+      <button class="quick-action-btn" aria-label="Notifications" title="Notifications">
+        <i class="fas fa-bell" aria-hidden="true"></i>
+        <span class="notification-dot" aria-hidden="true"></span>
+      </button>
+      <button class="quick-action-btn" aria-label="Settings" title="Settings">
+        <i class="fas fa-cog" aria-hidden="true"></i>
+      </button>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer" role="contentinfo">
       <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-links-column">
-            <h3>Help &amp; Support</h3>
-            <ul class="footer-links">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Media Center</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>Legal</h3>
-            <ul class="footer-links">
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Cookie Preferences</a></li>
-              <li><a href="#">Corporate Information</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>About Netflix</h3>
-            <ul class="footer-links">
-              <li><a href="#">Investor Relations</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Ways to Watch</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>Browse</h3>
-            <ul class="footer-links">
-              <li><a href="#">TV Shows</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">New Releases</a></li>
-              <li><a href="#">Popular</a></li>
-            </ul>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="brand-logo">
+              <i class="fas fa-play-circle" aria-hidden="true"></i>
+              <span>StreamFlix</span>
+            </div>
+            <p class="footer-description">
+              Your ultimate destination for premium entertainment. Discover, stream, and enjoy the best movies and TV shows.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Follow us on Facebook" class="social-link">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Follow us on Twitter" class="social-link">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Follow us on Instagram" class="social-link">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Follow us on YouTube" class="social-link">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="language-selector">
-          <label for="language" class="visually-hidden">Select language</label>
-          <select id="language" aria-label="Select language">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-          </select>
+        <div class="footer-content">
+          <div class="footer-links-column">
+            <h3 class="footer-title">
+              <i class="fas fa-question-circle" aria-hidden="true"></i>
+              Help &amp; Support
+            </h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#" class="footer-link">FAQ</a></li>
+              <li><a href="#" class="footer-link">Help Center</a></li>
+              <li><a href="#" class="footer-link">Account Settings</a></li>
+              <li><a href="#" class="footer-link">Media Center</a></li>
+              <li><a href="#" class="footer-link">Accessibility</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3 class="footer-title">
+              <i class="fas fa-gavel" aria-hidden="true"></i>
+              Legal
+            </h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#" class="footer-link">Terms of Use</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Cookie Preferences</a></li>
+              <li><a href="#" class="footer-link">Corporate Information</a></li>
+              <li><a href="#" class="footer-link">Legal Notices</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3 class="footer-title">
+              <i class="fas fa-info-circle" aria-hidden="true"></i>
+              About StreamFlix
+            </h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#" class="footer-link">Investor Relations</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
+              <li><a href="#" class="footer-link">Ways to Watch</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+              <li><a href="#" class="footer-link">Press</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3 class="footer-title">
+              <i class="fas fa-compass" aria-hidden="true"></i>
+              Browse
+            </h3>
+            <ul class="footer-links" role="list">
+              <li><a href="#" class="footer-link">TV Shows</a></li>
+              <li><a href="#" class="footer-link">Movies</a></li>
+              <li><a href="#" class="footer-link">New Releases</a></li>
+              <li><a href="#" class="footer-link">Popular</a></li>
+              <li><a href="#" class="footer-link">Genres</a></li>
+            </ul>
+          </div>
         </div>
 
         <div class="footer-bottom">
-          <p class="copyright">© 2025 Netflix Clone. All rights reserved.</p>
-          <nav class="legal-links" aria-label="Legal links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </nav>
+          <div class="footer-bottom-content">
+            <div class="language-selector">
+              <label for="language" class="language-label">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                Language
+              </label>
+              <select id="language" class="language-select" aria-label="Select language">
+                <option value="en">🇺🇸 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="fr">🇫🇷 Français</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="ja">🇯🇵 日本語</option>
+                <option value="ko">🇰🇷 한국어</option>
+              </select>
+            </div>
+
+            <div class="footer-legal">
+              <p class="copyright">
+                © 2025 StreamFlix. All rights reserved. Made with 
+                <i class="fas fa-heart" aria-hidden="true"></i> for entertainment lovers.
+              </p>
+              <nav class="legal-links" aria-label="Legal links">
+                <a href="#" class="legal-link">Privacy Policy</a>
+                <a href="#" class="legal-link">Terms of Service</a>
+                <a href="#" class="legal-link">Cookie Policy</a>
+                <a href="#" class="legal-link">DMCA</a>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
   </div>
 
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen" aria-hidden="true">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <i class="fas fa-play-circle" aria-hidden="true"></i>
+        <span>StreamFlix</span>
+      </div>
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+      <p class="loading-text">Loading your entertainment...</p>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Modal for Content Details -->
+  <div id="contentModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+      <div class="modal-body">
+        <div class="modal-poster">
+          <img id="modalPoster" src="" alt="" />
+        </div>
+        <div class="modal-info">
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div class="modal-meta">
+            <span id="modalRating" class="modal-rating"></span>
+            <span id="modalYear" class="modal-year"></span>
+            <span id="modalDuration" class="modal-duration"></span>
+          </div>
+          <p id="modalDescription" class="modal-description"></p>
+          <div class="modal-actions">
+            <button class="btn btn-primary modal-play" aria-label="Play content">
+              <i class="fas fa-play" aria-hidden="true"></i>
+              <span>Play</span>
+            </button>
+            <button class="btn btn-secondary modal-add" aria-label="Add to My List">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+              <span>My List</span>
+            </button>
+            <button class="btn btn-tertiary modal-share" aria-label="Share content">
+              <i class="fas fa-share" aria-hidden="true"></i>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="app.js"></script>
+  <script>
+    // Enhanced loading and interaction scripts
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide loading screen
+      setTimeout(() => {
+        const loadingScreen = document.getElementById('loadingScreen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 500);
+        }
+      }, 1500);
+
+      // Enhanced search functionality
+      const searchInput = document.querySelector('.search-input');
+      const searchClear = document.querySelector('.search-clear');
+      
+      if (searchInput && searchClear) {
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            searchClear.style.display = 'block';
+          } else {
+            searchClear.style.display = 'none';
+          }
+        });
+
+        searchClear.addEventListener('click', function() {
+          searchInput.value = '';
+          this.style.display = 'none';
+          searchInput.focus();
+        });
+      }
+
+      // Enhanced card interactions
+      const contentCards = document.querySelectorAll('.content-card');
+      contentCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+          this.style.zIndex = '10';
+        });
+
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+          this.style.zIndex = '1';
+        });
+      });
+
+      // Back to top functionality
+      const backToTop = document.getElementById('backToTop');
+      if (backToTop) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 300) {
+            backToTop.style.opacity = '1';
+            backToTop.style.visibility = 'visible';
+          } else {
+            backToTop.style.opacity = '0';
+            backToTop.style.visibility = 'hidden';
+          }
+        });
+
+        backToTop.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      // Quick actions functionality
+      const quickActions = document.querySelector('.quick-actions');
+      if (quickActions) {
+        window.addEventListener('scroll', function() {
+          if (window.pageYOffset > 200) {
+            quickActions.style.opacity = '1';
+            quickActions.style.visibility = 'visible';
+          } else {
+            quickActions.style.opacity = '0';
+            quickActions.style.visibility = 'hidden';
+          }
+        });
+      }
+
+      // Toast notification system
+      function showToast(message, type = 'info') {
+        const toastContainer = document.getElementById('toastContainer');
+        if (toastContainer) {
+          const toast = document.createElement('div');
+          toast.className = `toast toast-${type}`;
+          toast.innerHTML = `
+            <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}" aria-hidden="true"></i>
+            <span>${message}</span>
+          `;
+          toastContainer.appendChild(toast);
+
+          setTimeout(() => {
+            toast.classList.add('show');
+          }, 100);
+
+          setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => {
+              toast.remove();
+            }, 300);
+          }, 3000);
+        }
+      }
+
+      // Enhanced play button interactions
+      const playButtons = document.querySelectorAll('.play-btn, .btn-play');
+      playButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const contentTitle = this.closest('.content-card')?.querySelector('.card-title')?.textContent || 'content';
+          showToast(`Starting ${contentTitle}...`, 'success');
+        });
+      });
+
+      // Enhanced add to list functionality
+      const addButtons = document.querySelectorAll('.btn-list, .btn-add');
+      addButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const contentTitle = this.closest('.content-card')?.querySelector('.card-title')?.textContent || 'content';
+          showToast(`Added ${contentTitle} to My List`, 'success');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
