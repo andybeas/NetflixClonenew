@@ -74,13 +74,52 @@
 
     <main>
       <!-- Banner with Video Background -->
+        <!-- Banner with Video Background -->
       <section class="banner" aria-labelledby="banner-title">
-        <div class="banner-bg">
-          <img src="./images/bb2.jpg" alt="Breaking Bad background" class="banner-image" />
-          <div class="banner-overlay"></div>
-        </div>
-        <div class="banner-fade"></div>
-      </section>
+  <div class="banner-bg">
+    <!-- Slideshow Container -->
+    <div class="banner-slideshow">
+      <div class="banner-slide active">
+        <img src="./images/bb2.jpg" alt="Breaking Bad background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/ds2.jpg" alt="Dark series background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/st2.jpg" alt="Stranger Things background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/mh.webp" alt="Money Heist background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/friends.jpg" alt="Friends background" class="banner-image" />
+      </div>
+    </div>
+    <div class="banner-overlay"></div>
+    
+    <!-- Slideshow Navigation Dots -->
+    <div class="banner-dots">
+      <button class="dot active" aria-label="Go to slide 1" data-slide="0"></button>
+      <button class="dot" aria-label="Go to slide 2" data-slide="1"></button>
+      <button class="dot" aria-label="Go to slide 3" data-slide="2"></button>
+      <button class="dot" aria-label="Go to slide 4" data-slide="3"></button>
+      <button class="dot" aria-label="Go to slide 5" data-slide="4"></button>
+    </div>
+    
+    <!-- Slideshow Arrow Controls -->
+    <button class="banner-arrow banner-arrow-left" aria-label="Previous slide">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button class="banner-arrow banner-arrow-right" aria-label="Next slide">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="banner-fade"></div>
+</section>
 
       <!-- Netflix Originals -->
       <section class="section" aria-labelledby="originals-title">
