@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
   // DOM Elements
   const hamburger = document.getElementById('hamburger');
@@ -128,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Theme switching functionality
   function initTheme() {
-    // Get saved theme from localStorage or default to 'dark'
+    // Get saved theme or default to 'dark'
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
   }
@@ -146,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (themeText) themeText.textContent = 'Dark';
     }
     
-    // Save theme preference
     localStorage.setItem('theme', theme);
   }
 
@@ -156,28 +154,42 @@ document.addEventListener('DOMContentLoaded', function() {
     setTheme(newTheme);
   }
 
-  // Handle intro video
+  // Handle intro video - UPDATED
   function handleIntroVideo() {
-    if (introVideo) {
-      // Auto-hide intro video after 5 seconds if it doesn't end naturally
+    if (introVideo && intro) {
+      // Ensure main content is hidden initially
+      if (mainContent) {
+        mainContent.style.display = 'none';
+      }
+      
+      // Auto-hide intro video after video duration or 8 seconds max
       const hideIntroTimeout = setTimeout(() => {
         hideIntroContent();
-      }, 5000);
+      }, 8000);
 
-      // Also hide when video ends
+      // Hide when video ends naturally
       introVideo.addEventListener('ended', () => {
         clearTimeout(hideIntroTimeout);
         hideIntroContent();
       });
 
-      // Skip intro on click
+      // Skip intro on click/tap anywhere
       intro.addEventListener('click', () => {
         clearTimeout(hideIntroTimeout);
         hideIntroContent();
       });
+      
+      // Skip intro on any key press
+      const skipIntroHandler = function(e) {
+        clearTimeout(hideIntroTimeout);
+        hideIntroContent();
+        document.removeEventListener('keydown', skipIntroHandler);
+      };
+      document.addEventListener('keydown', skipIntroHandler, { once: true });
+      
     } else {
-      // If no video, ensure main content is visible
-      mainContent.style.display = 'block';
+      // If no video element, show main content immediately
+      if (mainContent) mainContent.style.display = 'block';
       if (intro) intro.style.display = 'none';
     }
   }
@@ -205,12 +217,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const posters = document.querySelectorAll('.posters img');
     posters.forEach(poster => {
       poster.addEventListener('mouseenter', function() {
-        // Bring to front and scale
         this.style.zIndex = '10';
       });
       
       poster.addEventListener('mouseleave', function() {
-        // Reset z-index after transition
         setTimeout(() => {
           this.style.zIndex = '';
         }, 300);
@@ -225,27 +235,23 @@ document.addEventListener('DOMContentLoaded', function() {
     
     playButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        // Simulate play action
         console.log('Playing content...');
-        this.innerHTML = '⏸️ Playing...';
+        this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg><span>Playing...</span>';
         setTimeout(() => {
-          this.innerHTML = '▶ Play';
+          this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><span>Play</span>';
         }, 3000);
       });
     });
     
     listButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        // Toggle add/remove from list
         const wasAdded = this.classList.contains('added');
         if (wasAdded) {
           this.classList.remove('added');
-          this.innerHTML = '+ Add to My List';
-          console.log('Removed from list');
+          this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg><span>My List</span>';
         } else {
           this.classList.add('added');
-          this.innerHTML = '✓ Added to List';
-          console.log('Added to list');
+          this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg><span>Added</span>';
         }
       });
     });
