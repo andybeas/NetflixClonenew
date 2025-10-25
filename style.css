@@ -892,36 +892,45 @@ body {
 /* Back to Top Button */
 #backToTop {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #e50914;
+  bottom: 40px;
+  right: 40px;
+  background: linear-gradient(135deg, var(--netflix-red), #b20710);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 1.5rem;
+  width: 56px;
+  height: 56px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(20px) scale(0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 #backToTop.show {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 #backToTop:hover {
-  background-color: #f40612;
-  transform: scale(1.1);
-  opacity: 1;
+  background: linear-gradient(135deg, #f40612, var(--netflix-red));
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 12px 28px rgba(229, 9, 20, 0.6);
+}
+
+#backToTop:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+#backToTop svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* Footer */
