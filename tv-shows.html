@@ -5,470 +5,143 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Netflix Clone — TV Shows</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Browse TV shows on Netflix Clone" />
+  <title>Netflix Clone – TV Shows</title>
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    /* ===== GENERAL STYLES ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #121212;
-      color: #fff;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-      border-radius: 8px;
-    }
-
-    button {
-      cursor: pointer;
-      border: none;
-      outline: none;
-      font-family: inherit;
-    }
-
-    /* ===== NAVBAR ===== */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 30px;
-      background-color: #141414;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar-logo {
-      height: 40px;
-      transition: transform 0.3s;
-    }
-
-    .navbar-logo:hover {
-      transform: scale(1.1);
-    }
-
-    .nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      align-items: center;
-    }
-
-    .nav-menu li a {
-      font-weight: 500;
-      transition: color 0.3s;
-      padding: 6px 12px;
-      border-radius: 4px;
-    }
-
-    .nav-menu li a.active,
-    .nav-menu li a:hover {
-      background-color: #e50914;
-      color: #fff;
-    }
-
-    .search input {
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: none;
-      outline: none;
-      width: 180px;
-      background-color: #222;
-      color: #fff;
-      transition: width 0.3s;
-    }
-
-    .search input:focus {
-      width: 250px;
-    }
-
-    .theme-toggle {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 12px;
-      background-color: #e50914;
-      border-radius: 20px;
-      font-weight: 500;
-      transition: all 0.3s;
-    }
-
-    .theme-toggle:hover {
-      background-color: #f6121d;
-    }
-
-    /* ===== BANNER ===== */
-    .banner {
-      height: 450px;
-      display: flex;
-      align-items: flex-end;
-      padding: 30px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      border-bottom: 2px solid #333;
-    }
-
-    .banner-inner {
-      max-width: 600px;
-    }
-
-    .banner h1.title {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    }
-
-    .banner p.desc {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
-      color: #ddd;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .btn {
-      padding: 10px 25px;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .btn-play {
-      background-color: #fff;
-      color: #000;
-    }
-
-    .btn-play:hover {
-      background-color: #e6e6e6;
-      transform: scale(1.05);
-    }
-
-    .btn-list {
-      background-color: rgba(109, 109, 110, 0.7);
-      color: #fff;
-    }
-
-    .btn-list:hover {
-      background-color: rgba(109, 109, 110, 0.9);
-      transform: scale(1.05);
-    }
-
-    /* ===== SECTIONS ===== */
-    .section {
-      padding: 20px 30px;
-    }
-
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      border-left: 5px solid #e50914;
-      padding-left: 10px;
-    }
-
-    .posters {
-      display: flex;
-      gap: 12px;
-      overflow-x: auto;
-      padding-bottom: 10px;
-    }
-
-    .posters::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .posters::-webkit-scrollbar-thumb {
-      background-color: #e50914;
-      border-radius: 3px;
-    }
-
-    .posters::-webkit-scrollbar-track {
-      background-color: #222;
-    }
-
-    /* ===== CONTINUE WATCHING ===== */
-    .continue-list {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-    }
-
-    .continue-card {
-      position: relative;
-      min-width: 180px;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .continue-card:hover {
-      transform: scale(1.05);
-    }
-
-    .continue-card .progress {
-      position: absolute;
-      bottom: 25px;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .continue-card .progress i {
-      display: block;
-      height: 100%;
-      background-color: #e50914;
-    }
-
-    .continue-card .meta {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 6px 8px;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), transparent);
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      color: #fff;
-    }
-
-    /* ===== BACK TO TOP ===== */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 10px 15px;
-      border-radius: 50%;
-      background-color: #e50914;
-      color: #fff;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    #backToTop:hover {
-      transform: scale(1.2);
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background-color: #141414;
-      padding: 30px;
-      color: #888;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #888;
-      transition: color 0.3s;
-    }
-
-    footer a:hover {
-      color: #fff;
-    }
-
-    footer .footer-links {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 10px 0;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 768px) {
-      .banner h1.title {
-        font-size: 2rem;
-      }
-
-      .banner p.desc {
-        font-size: 0.9rem;
-      }
-
-      .posters {
-        gap: 8px;
-      }
-
-      .continue-card {
-        min-width: 140px;
-      }
-
-      .nav-menu {
-        display: none;
-      }
-
-      .search input {
-        width: 120px;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div id="mainContent">
+  <div id="mainContent" style="display: block;">
     <header>
-      <nav class="navbar">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="brand">
-          <a href="index.html">
-            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
+          <a href="index.html" aria-label="Netflix Home">
+            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo" />
           </a>
         </div>
 
+        <!-- Mobile Menu Toggle -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Links -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="tv-shows.html" class="active">TV Shows</a></li>
+          <li><a href="tv-shows.html" aria-current="page" class="active">TV Shows</a></li>
           <li><a href="movies.html">Movies</a></li>
-          <li><a href="newpopular.html">New & Popular</a></li>
+          <li><a href="newpopular.html">New &amp; Popular</a></li>
           <li><a href="#">My List</a></li>
         </ul>
 
-        <div class="search" role="search">
-          <input type="search" placeholder="Search TV Shows" aria-label="Search TV Shows" />
-        </div>
+        <!-- Right Side Controls -->
+        <div class="nav-controls">
+          <!-- Search Bar -->
+          <form class="search" role="search" aria-label="Search movies and shows">
+            <input type="search" placeholder="Search" aria-label="Search for titles" />
+          </form>
 
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          🌙 Dark
-        </button>
+          <!-- Theme Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span id="themeText" class="theme-text-desktop">Dark</span>
+          </button>
+
+          <!-- User Profile -->
+          <div class="user-profile">
+            <img src="./images/user.png" alt="User profile" />
+          </div>
+        </div>
       </nav>
     </header>
 
-    <!-- Featured TV Show -->
-    <section class="banner" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
-                    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
-                    url('./images/bb2.jpg');">
-      <div class="container banner-inner">
-        <div class="banner-content">
-          <h1 class="title">Breaking Bad</h1>
-          <p class="desc">A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
-          <div class="buttons">
-            <button class="btn btn-play">▶ Play</button>
-            <button class="btn btn-list">+ My List</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TV Show Categories -->
-    <section class="section">
-      <h2>Trending Now</h2>
-      <div class="posters">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <img src="./images/sthings.jpeg" alt="Stranger Things">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <img src="./images/ds2.jpg" alt="Dark">
-        <img src="./images/ds.jpg" alt="Dark">
-        <img src="./images/friends.jpg" alt="Friends">
-        <img src="./images/lak.jpg" alt="Lucifer">
-        <img src="./images/hoc.jpg" alt="House of Cards">
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Popular on Netflix</h2>
-      <div class="posters">
-        <img src="./images/ns.jpg" alt="Narcos">
-        <img src="./images/ns2.jpg" alt="Narcos">
-        <img src="./images/dn.webp" alt="Death Note">
-        <img src="./images/dn2.jpg" alt="Death Note">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <img src="./images/sthings.jpeg" alt="Stranger Things">
-        <img src="./images/mha.png" alt="My Hero Academia">
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>New Releases</h2>
-      <div class="posters">
-        <img src="./images/mha2.jpeg" alt="My Hero Academia New Season">
-        <img src="./images/sexed.jpg" alt="Sex Education">
-        <img src="./images/st3.jpg" alt="Stranger Things New Season">
-        <img src="./images/ns2.jpg" alt="Narcos New Season">
-        <img src="./images/ds2.jpg" alt="Dark New Season">
-        <img src="./images/mha.png" alt="My Hero Academia">
-        <img src="./images/dn2.jpg" alt="Death Note New Season">
-        <img src="./images/ns.jpg" alt="Narcos">
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Watch Again</h2>
-      <div class="continue-list">
-        <div class="continue-card">
-          <img src="./images/st2.jpg" alt="Stranger Things">
-          <div class="progress"><i style="width:65%;"></i></div>
-          <div class="meta"><span>S4 E7</span><span>18 min left</span></div>
-        </div>
-        <div class="continue-card">
-          <img src="./images/mh.webp" alt="Money Heist">
-          <div class="progress"><i style="width:45%;"></i></div>
-          <div class="meta"><span>S2 E3</span><span>32 min left</span></div>
-        </div>
-        <div class="continue-card">
-          <img src="./images/ds2.jpg" alt="Dark">
-          <div class="progress"><i style="width:85%;"></i></div>
-          <div class="meta"><span>S3 E4</span><span>8 min left</span></div>
-        </div>
-        <div class="continue-card">
-          <img src="./images/ns.jpg" alt="Narcos">
-          <div class="progress"><i style="width:25%;"></i></div>
-          <div class="meta"><span>S2 E1</span><span>45 min left</span></div>
-        </div>
-      </div>
-    </section>
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top" aria-label="Scroll to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
 
     <button id="backToTop" title="Go to top">↑</button>
 
+    <!-- Footer -->
     <footer>
-      <div class="footer-content">
-        <p>Questions? Call <a href="#">000-800-919-1694</a></p>
-        <ul class="footer-links">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Cookie Preferences</a></li>
-          <li><a href="#">Corporate Information</a></li>
-        </ul>
-        <p class="copyright">© 2025 Netflix Clone by Sandhit</p>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-links-column">
+            <h3>Help &amp; Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Media Center</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookie Preferences</a></li>
+              <li><a href="#">Corporate Information</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>About Netflix</h3>
+            <ul class="footer-links">
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Ways to Watch</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>Browse</h3>
+            <ul class="footer-links">
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">New Releases</a></li>
+              <li><a href="#">Popular</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="language-selector">
+          <label for="language" class="visually-hidden">Select language</label>
+          <select id="language" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">© 2025 Netflix Clone. All rights reserved.</p>
+          <nav class="legal-links" aria-label="Legal links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </nav>
+        </div>
       </div>
     </footer>
   </div>
 
-  <script>
-    // Back to Top
-    const backToTop = document.getElementById("backToTop");
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  </script>
+  <!-- Scripts -->
+  <script src="app.js"></script>
 </body>
 
 </html>
