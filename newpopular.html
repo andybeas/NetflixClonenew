@@ -27,56 +27,37 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <!-- Navigation Links -->
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="tv-shows.html">TV Shows</a></li>
-          <li><a href="movies.html">Movies</a></li>
-          <li><a href="newpopular.html" aria-current="page" class="active">New &amp; Popular</a></li>
-          <li><a href="#">My List</a></li>
-        </ul>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tv-shows.html">TV Shows</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="new-popular.html" class="active">New &amp; Popular</a></li>
+        <li><a href="my-list.html">My List</a></li>
+      </ul>
 
-        <!-- Right Side Controls -->
-        <div class="nav-controls">
-          <!-- Search Bar -->
-          <form class="search" role="search" aria-label="Search movies and shows">
-            <input type="search" placeholder="Search" aria-label="Search for titles" />
-          </form>
+      <div class="search" role="search">
+        <input type="search" placeholder="Search" aria-label="Search" />
+      </div>
+      
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+      </button>
+    </nav>
+  </header>
 
-          <!-- Theme Toggle -->
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
-            <span id="themeIcon" aria-hidden="true">🌙</span>
-            <span id="themeText" class="theme-text-desktop">Dark</span>
-          </button>
-
-          <!-- User Profile -->
-          <div class="user-profile">
-            <img src="./images/user.png" alt="User profile" />
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <!-- Featured Content Banner -->
-      <section class="banner" aria-labelledby="banner-title">
-        <div class="banner-bg">
-          <div class="banner-slideshow">
-            <div class="banner-slide active">
-              <img src="./images/oppenheimerFeatured.jpg" alt="Oppenheimer background" class="banner-image" />
-            </div>
-          </div>
-          <div class="banner-overlay"></div>
-        </div>
-        <div class="banner-fade"></div>
-        
+  <!-- MAIN CONTENT -->
+  <main class="content-wrapper">
+    <section class="banner" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
+                    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
+                    url('./images/oppenheimerFeatured.jpg');"">
+      <div class="container banner-inner">
         <div class="banner-content">
           <div class="banner-badge">
             <span>🆕</span>
