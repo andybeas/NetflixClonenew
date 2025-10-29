@@ -27,12 +27,11 @@
           </a>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
         <!-- Navigation Links -->
         <ul class="nav-menu" id="navMenu">
@@ -43,26 +42,16 @@
           <li><a href="#">My List</a></li>
         </ul>
 
-        <!-- Right Side Controls -->
-        <div class="nav-controls">
-          <!-- Search Bar -->
-          <form class="search" role="search" aria-label="Search movies and shows">
-            <input type="search" placeholder="Search" aria-label="Search for titles" />
-          </form>
-
-          <!-- Theme Toggle -->
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
-            <span id="themeIcon" aria-hidden="true">🌙</span>
-            <span id="themeText" class="theme-text-desktop">Dark</span>
-          </button>
-
-          <!-- User Profile -->
-          <div class="user-profile">
-            <img src="./images/user.png" alt="User profile" />
-          </div>
-        </div>
-      </nav>
-    </header>
+      <div class="search" role="search">
+        <input type="search" placeholder="Search" aria-label="Search" />
+      </div>
+      
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span id="themeIcon">🌙</span>
+        <span id="themeText">Dark</span>
+      </button>
+    </nav>
+  </header>
 
     <main>
       <!-- Banner -->
