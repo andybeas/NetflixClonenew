@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse new and popular content on Netflix Clone" />
-  <title>Netflix Clone – New &amp; Popular</title>
-  
+  <meta name="description" content="Netflix Clone — New & Popular movies and TV shows." />
+  <title>Netflix Clone — New & Popular</title>
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css" />
+
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <div id="mainContent" style="display: block;">
+  <!-- Main Content -->
+  <div id="mainContent">
     <header>
       <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="brand">
@@ -33,13 +33,14 @@
         <span></span>
       </button>
 
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tv-shows.html">TV Shows</a></li>
-        <li><a href="movies.html">Movies</a></li>
-        <li><a href="new-popular.html" class="active">New &amp; Popular</a></li>
-        <li><a href="my-list.html">My List</a></li>
-      </ul>
+        <!-- Navigation Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tv-shows.html">TV Shows</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="newpopular.html" aria-current="page">New &amp; Popular</a></li>
+          <li><a href="#">My List</a></li>
+        </ul>
 
       <div class="search" role="search">
         <input type="search" placeholder="Search" aria-label="Search" />
@@ -52,45 +53,20 @@
     </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="content-wrapper">
-    <section class="banner" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
-                    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
-                    url('./images/oppenheimerFeatured.jpg');"">
-      <div class="container banner-inner">
+    <main>
+      <!-- Banner -->
+      <section class="banner" aria-labelledby="banner-title" style="background-image: 
+        linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
+        linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
+        url('./images/oppenheimerFeatured.jpg');">
         <div class="banner-content">
-          <div class="banner-badge">
-            <span>🆕</span>
-            <span>New Release</span>
-          </div>
-          <h1 class="title" id="banner-title">Oppenheimer</h1>
-          <div class="banner-meta">
-            <span class="match">96% Match</span>
-            <span>2023</span>
-            <span class="rating">16+</span>
-            <span>3h 1m</span>
-          </div>
-          <p class="desc">A brilliant physicist leads a race against time to build the world's first atomic bomb. Witness the rise and moral conflict of a man who changed history forever.</p>
+          <h1 id="banner-title">Oppenheimer</h1>
+          <p class="desc">
+            A brilliant physicist leads a race against time to build the world’s first atomic bomb.
+          </p>
           <div class="buttons">
-            <button class="btn btn-play">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              Play
-            </button>
-            <button class="btn btn-list">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M5 12h14"/>
-              </svg>
-              My List
-            </button>
-            <button class="btn btn-info">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 16v-4M12 8h.01"/>
-              </svg>
-              More Info
-            </button>
+            <button class="btn btn-play" aria-label="Play Oppenheimer">▶ Play</button>
+            <button class="btn btn-list" aria-label="Add Oppenheimer to My List">+ My List</button>
           </div>
         </div>
       </section>
@@ -112,87 +88,13 @@
             </button>
           </div>
         </div>
-        <div class="posters" role="list" aria-label="New Releases">
-          <div class="poster-item">
-            <img src="./images/oppenheimer.jpg" alt="Oppenheimer poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Oppenheimer</h3>
-                <p class="poster-meta">2023 • Movie</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/onepiece.jpg" alt="One Piece poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>One Piece</h3>
-                <p class="poster-meta">2023 • Series</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/witcher.jpg" alt="The Witcher poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>The Witcher</h3>
-                <p class="poster-meta">2024 • Series</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/rebelmoon.jpg" alt="Rebel Moon poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Rebel Moon</h3>
-                <p class="poster-meta">2023 • Movie</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/elite.jpg" alt="Elite poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Elite</h3>
-                <p class="poster-meta">2024 • Series</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/kobra.jpg" alt="Cobra Kai poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Cobra Kai</h3>
-                <p class="poster-meta">2024 • Series</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/st2.jpg" alt="Stranger Things poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Stranger Things</h3>
-                <p class="poster-meta">2024 • Series</p>
-              </div>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/mh.webp" alt="Money Heist poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-              <div class="poster-info">
-                <h3>Money Heist</h3>
-                <p class="poster-meta">2023 • Series</p>
-              </div>
-            </div>
-          </div>
+        <div class="posters" role="list" aria-label="New Releases Posters">
+          <div class="poster-item"><img src="./images/oppenheimer.jpg" alt="Oppenheimer poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/onepiece.jpg" alt="One Piece Live Action poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/witcher.jpg" alt="The Witcher poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/rebelmoon.jpg" alt="Rebel Moon poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/elite.jpg" alt="Elite poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/kobra.jpg" alt="Cobra Kai poster" loading="lazy"></div>
         </div>
       </section>
 
@@ -213,55 +115,13 @@
             </button>
           </div>
         </div>
-        <div class="posters" role="list" aria-label="Trending This Week">
-          <div class="poster-item">
-            <img src="./images/st2.jpg" alt="Stranger Things poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/mh.webp" alt="Money Heist poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/lak.jpg" alt="Lucifer poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/ds.jpg" alt="Dark poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/ns.jpg" alt="Narcos poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/friends.jpg" alt="Friends poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/hoc.jpg" alt="House of Cards poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/dn.webp" alt="Death Note poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
+        <div class="posters" role="list" aria-label="Trending Posters">
+          <div class="poster-item"><img src="./images/st2.jpg" alt="Stranger Things poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/mh.webp" alt="Money Heist poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/lak.jpg" alt="Lucifer poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/ds.jpg" alt="Dark poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/ns.jpg" alt="Narcos poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/friends.jpg" alt="Friends poster" loading="lazy"></div>
         </div>
       </section>
 
@@ -282,124 +142,13 @@
             </button>
           </div>
         </div>
-        <div class="posters" role="list" aria-label="Coming Soon">
-          <div class="poster-item">
-            <img src="./images/squidgame2.jpg" alt="Squid Game Season 2 poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/b99.jpg" alt="Brooklyn Nine-Nine poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/vikings.jpg" alt="Vikings Valhalla poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/witcher.jpg" alt="The Witcher Season 4 poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/pj.jpg" alt="Project Jupiter poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/anime-new.jpg" alt="New Anime poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/oppenheimer.jpg" alt="Oppenheimer poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/onepiece.jpg" alt="One Piece poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Top 10 This Week -->
-      <section class="section" aria-labelledby="top10-title">
-        <div class="section-header">
-          <h2 id="top10-title">Top 10 This Week</h2>
-          <div class="section-controls">
-            <button class="scroll-btn scroll-left" aria-label="Scroll left">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-              </svg>
-            </button>
-            <button class="scroll-btn scroll-right" aria-label="Scroll right">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div class="posters" role="list" aria-label="Top 10 This Week">
-          <div class="poster-item">
-            <img src="./images/mha.png" alt="My Hero Academia poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/ds2.jpg" alt="Dark poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/sexed.jpg" alt="Sex Education poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/ns2.jpg" alt="Narcos poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/mha2.jpeg" alt="My Hero Academia poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/st3.jpg" alt="Stranger Things poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/dn2.jpg" alt="Death Note poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
-          <div class="poster-item">
-            <img src="./images/sthings.jpeg" alt="Stranger Things poster" loading="lazy" />
-            <div class="poster-overlay">
-              <button class="quick-play" aria-label="Quick play">▶</button>
-            </div>
-          </div>
+        <div class="posters" role="list" aria-label="Coming Soon Posters">
+          <div class="poster-item"><img src="./images/squidgame2.jpg" alt="Squid Game Season 2 poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/b99.jpg" alt="Brooklyn Nine-Nine poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/vikings.jpg" alt="Vikings Valhalla poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/witcher.jpg" alt="The Witcher Season 4 poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/pj.jpg" alt="Project Jupiter poster" loading="lazy"></div>
+          <div class="poster-item"><img src="./images/anime-new.jpg" alt="New Anime poster" loading="lazy"></div>
         </div>
       </section>
     </main>
@@ -466,14 +215,7 @@
           </select>
         </div>
 
-        <div class="footer-bottom">
-          <p class="copyright">© 2025 Netflix Clone. All rights reserved.</p>
-          <nav class="legal-links" aria-label="Legal links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </nav>
-        </div>
+        <p class="copyright">© 2025 Netflix Clone</p>
       </div>
     </footer>
   </div>
@@ -481,5 +223,4 @@
   <!-- Scripts -->
   <script src="app.js"></script>
 </body>
-
 </html>

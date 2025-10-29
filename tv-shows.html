@@ -1,145 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse TV shows on Netflix Clone" />
-  <title>Netflix Clone – TV Shows</title>
-  
+  <meta name="description" content="Netflix Clone TV Shows and Movies page with accessibility, lazy-loading, and responsive design." />
+  <title>Netflix Clone — TV Shows & Movies</title>
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css" />
+
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet" />
 </head>
-
 <body>
-  <div id="mainContent" style="display: block;">
-    <header>
-      <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="brand">
-          <a href="index.html" aria-label="Netflix Home">
-            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo" />
-          </a>
-        </div>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <a href="index.html" aria-label="Netflix Home">
+          <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo" />
+        </a>
+      </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
+      <!-- Mobile Menu Toggle -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tv-shows.html" aria-current="page">TV Shows</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="newpopular.html">New & Popular</a></li>
+        <li><a href="#">My List</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <form class="search" role="search" aria-label="Search shows and movies">
+          <input type="search" placeholder="Search" aria-label="Search for titles" />
+        </form>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeText" class="theme-text-desktop">Dark</span>
         </button>
-
-        <!-- Navigation Links -->
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="tv-shows.html" aria-current="page" class="active">TV Shows</a></li>
-          <li><a href="movies.html">Movies</a></li>
-          <li><a href="newpopular.html">New & Popular</a></li>
-          <li><a href="my-list.html">My List</a></li>
-        </ul>
-
-        <!-- Right Side Controls -->
-        <div class="nav-controls">
-          <!-- Search Bar -->
-          <form class="search" role="search" aria-label="Search movies and shows">
-            <input type="search" placeholder="Search" aria-label="Search for titles" />
-          </form>
-
-          <!-- Theme Toggle -->
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
-            <span id="themeIcon" aria-hidden="true">🌙</span>
-            <span id="themeText" class="theme-text-desktop">Dark</span>
-          </button>
-
-          <!-- User Profile -->
-          <div class="user-profile">
-            <img src="./images/user.png" alt="User profile" />
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top" aria-label="Scroll to top">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 19V5M5 12l7-7 7 7"/>
-      </svg>
-    </button>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-links-column">
-            <h3>Help &amp; Support</h3>
-            <ul class="footer-links">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Help Center</a></li>
-              <li><a href="#">Account</a></li>
-              <li><a href="#">Media Center</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>Legal</h3>
-            <ul class="footer-links">
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Cookie Preferences</a></li>
-              <li><a href="#">Corporate Information</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>About Netflix</h3>
-            <ul class="footer-links">
-              <li><a href="#">Investor Relations</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Ways to Watch</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-links-column">
-            <h3>Browse</h3>
-            <ul class="footer-links">
-              <li><a href="#">TV Shows</a></li>
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">New Releases</a></li>
-              <li><a href="#">Popular</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="language-selector">
-          <label for="language" class="visually-hidden">Select language</label>
-          <select id="language" aria-label="Select language">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
-          </select>
-        </div>
-
-        <div class="footer-bottom">
-          <p class="copyright">© 2025 Netflix Clone. All rights reserved.</p>
-          <nav class="legal-links" aria-label="Legal links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookie Policy</a>
-          </nav>
+        <div class="user-profile">
+          <img src="./images/user.png" alt="User profile" />
         </div>
       </div>
-    </footer>
-  </div>
+    </nav>
+  </header>
 
-  <!-- Scripts -->
+  <main>
+    <!-- Banner Section -->
+    <section class="banner" aria-labelledby="banner-title">
+      <div class="banner-bg">
+        <div class="banner-slideshow">
+          <div class="banner-slide active">
+            <img src="./images/st2.jpg" alt="Stranger Things background" class="banner-image" />
+          </div>
+          <div class="banner-slide">
+            <img src="./images/mh.webp" alt="Money Heist background" class="banner-image" />
+          </div>
+          <div class="banner-slide">
+            <img src="./images/ds2.jpg" alt="Dark series background" class="banner-image" />
+          </div>
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-dots">
+          <button class="dot active" aria-label="Go to slide 1" data-slide="0"></button>
+          <button class="dot" aria-label="Go to slide 2" data-slide="1"></button>
+          <button class="dot" aria-label="Go to slide 3" data-slide="2"></button>
+        </div>
+        <button class="banner-arrow banner-arrow-left" aria-label="Previous slide">◀</button>
+        <button class="banner-arrow banner-arrow-right" aria-label="Next slide">▶</button>
+      </div>
+    </section>
+
+    <!-- Netflix Originals -->
+    <section class="section" aria-labelledby="originals-title">
+      <div class="section-header">
+        <h2 id="originals-title">Netflix Originals</h2>
+        <div class="section-controls">
+          <button class="scroll-btn scroll-left" aria-label="Scroll left">◀</button>
+          <button class="scroll-btn scroll-right" aria-label="Scroll right">▶</button>
+        </div>
+      </div>
+      <div class="posters" role="list" aria-label="Netflix Originals">
+        <div class="poster-item">
+          <img src="./images/ds2.jpg" alt="Dark poster" loading="lazy"/>
+          <div class="poster-overlay">
+            <button class="quick-play" aria-label="Quick play">▶</button>
+            <div class="poster-info">
+              <h3>Dark</h3>
+              <p class="poster-meta">2017 • 3 Seasons</p>
+            </div>
+          </div>
+        </div>
+        <div class="poster-item">
+          <img src="./images/mh.webp" alt="Money Heist poster" loading="lazy"/>
+          <div class="poster-overlay">
+            <button class="quick-play" aria-label="Quick play">▶</button>
+            <div class="poster-info">
+              <h3>Money Heist</h3>
+              <p class="poster-meta">2017 • 5 Seasons</p>
+            </div>
+          </div>
+        </div>
+        <div class="poster-item">
+          <img src="./images/st2.jpg" alt="Stranger Things poster" loading="lazy"/>
+          <div class="poster-overlay">
+            <button class="quick-play" aria-label="Quick play">▶</button>
+            <div class="poster-info">
+              <h3>Stranger Things</h3>
+              <p class="poster-meta">2016 • 4 Seasons</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Now -->
+    <section class="section" aria-labelledby="trending-title">
+      <div class="section-header">
+        <h2 id="trending-title">Trending Now</h2>
+        <div class="section-controls">
+          <button class="scroll-btn scroll-left" aria-label="Scroll left">◀</button>
+          <button class="scroll-btn scroll-right" aria-label="Scroll right">▶</button>
+        </div>
+      </div>
+      <div class="posters" role="list" aria-label="Trending shows and movies">
+        <div class="poster-item"><img src="./images/friends.jpg" alt="Friends poster" loading="lazy"/><div class="poster-overlay"><button class="quick-play">▶</button></div></div>
+        <div class="poster-item"><img src="./images/lak.jpg" alt="Lucifer poster" loading="lazy"/><div class="poster-overlay"><button class="quick-play">▶</button></div></div>
+        <div class="poster-item"><img src="./images/hoc.jpg" alt="House of Cards poster" loading="lazy"/><div class="poster-overlay"><button class="quick-play">▶</button></div></div>
+        <div class="poster-item"><img src="./images/ns.jpg" alt="Narcos poster" loading="lazy"/><div class="poster-overlay"><button class="quick-play">▶</button></div></div>
+      </div>
+    </section>
+
+    <!-- Continue Watching -->
+    <section class="section" aria-labelledby="continue-title">
+      <h2 id="continue-title">Continue Watching</h2>
+      <div class="continue-list" role="list" aria-label="Continue watching list">
+        <article class="continue-card" role="listitem">
+          <img src="./images/st2.jpg" alt="Stranger Things cover" loading="lazy"/>
+          <div class="progress" aria-label="Progress 65%"><i style="width:65%;"></i></div>
+          <div class="meta"><span>S4 E7</span><span>32 min left</span></div>
+        </article>
+        <article class="continue-card" role="listitem">
+          <img src="./images/mh.webp" alt="Money Heist cover" loading="lazy"/>
+          <div class="progress" aria-label="Progress 45%"><i style="width:45%;"></i></div>
+          <div class="meta"><span>S3 E8</span><span>15 min left</span></div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Netflix Clone. All rights reserved.</p>
+  </footer>
+
   <script src="app.js"></script>
 </body>
-
 </html>
