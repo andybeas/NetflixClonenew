@@ -42,6 +42,18 @@
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+[data-theme="light"] button {
+  border: 1px solid #e0e0e0 !important;
+}
+
+[data-theme="light"] #page-title, #banner-title{
+  color: #b4b4b4;
+}
+
+[data-theme="light"] #banner-title-desc{
+  color: #dddddd;
+}
+
 body {
   font-family: "Poppins", Arial, sans-serif;
   background-color: var(--bg-primary);
@@ -226,7 +238,8 @@ body {
 .user-profile {
   width: 32px;
   height: 32px;
-  border-radius: 4px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -960,6 +973,7 @@ footer {
   font-weight: 600;
   position: relative;
   padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
 .footer-links-column h3::after {
@@ -967,10 +981,11 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
+  width: 100%;
   height: 2px;
   background: var(--netflix-red);
 }
+
 
 .footer-links {
   list-style: none;
@@ -989,17 +1004,6 @@ footer {
   transition: all 0.3s ease;
   position: relative;
   display: block;
-}
-
-.footer-links a::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0;
-  height: 1px;
-  background: var(--netflix-red);
-  transition: width 0.3s ease;
 }
 
 .footer-links a:hover {
