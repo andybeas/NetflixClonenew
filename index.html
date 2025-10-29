@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A Netflix Clone featuring movies, TV shows, and trending content with accessibility and responsive design." />
   <title>Netflix Clone — Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <div id="intro">
-        <video id="introVideo" autoplay muted playsinline>
-            <source src="./videos/netflix_intro.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div id="mainContent">
-  <header>
-    <nav class="navbar">
-      <div class="brand">
-        <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
-      </div>
+  <!-- Intro Video -->
+  <div id="intro" aria-hidden="true">
+    <video id="introVideo" autoplay muted playsinline>
+      <source src="./videos/netflix_intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
@@ -58,97 +57,393 @@
           <button class="btn btn-play">▶ Play</button>
           <button class="btn btn-list">+ Add to My List</button>
         </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="tv-shows.html">TV Shows</a></li>
+          <li><a href="movies.html">Movies</a></li>
+          <li><a href="newpopular.html">New &amp; Popular</a></li>
+          <li><a href="my-list.html">My List</a></li>
+        </ul>
+
+        <!-- Right Side Controls -->
+        <div class="nav-controls">
+          <!-- Search Bar -->
+        <form class="search" role="search" aria-label="Search movies and shows">
+          <input type="search" placeholder="Search" aria-label="Search for titles" />
+        </form>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span id="themeText" class="theme-text-desktop">Dark</span>
+          </button>
+
+          <!-- User Profile -->
+          <div class="user-profile">
+            <img src="./images/user.png" alt="User profile" />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Banner with Video Background -->
+        <!-- Banner with Video Background -->
+      <section class="banner" aria-labelledby="banner-title">
+  <div class="banner-bg">
+    <!-- Slideshow Container -->
+    <div class="banner-slideshow">
+      <div class="banner-slide active">
+        <img src="./images/bb2.jpg" alt="Breaking Bad background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/ds2.jpg" alt="Dark series background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/st2.jpg" alt="Stranger Things background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/mh.webp" alt="Money Heist background" class="banner-image" />
+      </div>
+      <div class="banner-slide">
+        <img src="./images/friends.jpg" alt="Friends background" class="banner-image" />
       </div>
     </div>
-  </section>
-
-  <!-- SECTIONS -->
-  <section class="section">
-    <h2>Netflix Originals</h2>
-    <div class="posters" aria-label="Netflix Originals">
-      <img src="./images/ds2.jpg" alt="Dark poster">
-      <img src="./images/mh.webp" alt="Money Heist poster">
-      <img src="./images/friends.jpg" alt="Friends poster">
-      <img src="./images/lak.jpg" alt="Lucifer poster">
-      <img src="./images/hoc.jpg" alt="House of Cards poster">
-      <img src="./images/dn.webp" alt="Death Note poster">
-      <img src="./images/ns.jpg" alt="Narcos poster">
-      <img src="./images/mha.png" alt="My Hero Academia poster">
-      <img src="./images/st2.jpg" alt="Stranger Things poster">
+    <div class="banner-overlay"></div>
+    
+    <!-- Slideshow Navigation Dots -->
+    <div class="banner-dots">
+      <button class="dot active" aria-label="Go to slide 1" data-slide="0"></button>
+      <button class="dot" aria-label="Go to slide 2" data-slide="1"></button>
+      <button class="dot" aria-label="Go to slide 3" data-slide="2"></button>
+      <button class="dot" aria-label="Go to slide 4" data-slide="3"></button>
+      <button class="dot" aria-label="Go to slide 5" data-slide="4"></button>
     </div>
-  </section>
+    
+    <!-- Slideshow Arrow Controls -->
+    <button class="banner-arrow banner-arrow-left" aria-label="Previous slide">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+    <button class="banner-arrow banner-arrow-right" aria-label="Next slide">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="banner-fade"></div>
+</section>
 
-  <section class="section">
-    <h2>Trending Now</h2>
-    <div class="posters" aria-label="Trending Now">
-      <img src="./images/ds.jpg" alt="Dark poster">
-      <img src="./images/friends.jpg" alt="Friends poster">
-      <img src="./images/lak.jpg" alt="Lucifer poster">
-      <img src="./images/hoc.jpg" alt="House of Cards poster">
-      <img src="./images/dn.webp" alt="Death Note poster">
-      <img src="./images/ns.jpg" alt="Narcos poster">
-      <img src="./images/dn2.jpg" alt="Death Note 2 poster">
-      <img src="./images/ns2.jpg" alt="Narcos 2 poster">
-      <img src="./images/mha2.jpeg" alt="My Hero Academia 2 poster">
-    </div>
-  </section>
+      <!-- Netflix Originals -->
+      <section class="section" aria-labelledby="originals-title">
+        <div class="section-header">
+          <h2 id="originals-title">Netflix Originals</h2>
+          <div class="section-controls">
+            <button class="scroll-btn scroll-left" aria-label="Scroll left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button class="scroll-btn scroll-right" aria-label="Scroll right">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="posters" role="list" aria-label="List of Netflix Originals">
+          <div class="poster-item">
+            <img src="./images/ds2.jpg" alt="Dark TV show poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Dark</h3>
+                <p class="poster-meta">2017 • 3 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/mh.webp" alt="Money Heist series poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Money Heist</h3>
+                <p class="poster-meta">2017 • 5 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/friends.jpg" alt="Friends sitcom poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Friends</h3>
+                <p class="poster-meta">1994 • 10 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/lak.jpg" alt="Lucifer TV show poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Lucifer</h3>
+                <p class="poster-meta">2016 • 6 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/hoc.jpg" alt="House of Cards political drama poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>House of Cards</h3>
+                <p class="poster-meta">2013 • 6 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/dn.webp" alt="Death Note anime poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Death Note</h3>
+                <p class="poster-meta">2006 • 1 Season</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/ns.jpg" alt="Narcos crime drama poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Narcos</h3>
+                <p class="poster-meta">2015 • 3 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/mha.png" alt="My Hero Academia anime poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>My Hero Academia</h3>
+                <p class="poster-meta">2016 • 6 Seasons</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/st2.jpg" alt="Stranger Things sci-fi poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+              <div class="poster-info">
+                <h3>Stranger Things</h3>
+                <p class="poster-meta">2016 • 4 Seasons</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <section class="section">
-    <h2>Continue Watching</h2>
-    <div class="continue-list" aria-label="Continue watching list">
+      <!-- Trending Now -->
+      <section class="section" aria-labelledby="trending-title">
+        <div class="section-header">
+          <h2 id="trending-title">Trending Now</h2>
+          <div class="section-controls">
+            <button class="scroll-btn scroll-left" aria-label="Scroll left">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+            </button>
+            <button class="scroll-btn scroll-right" aria-label="Scroll right">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="posters" role="list" aria-label="Trending Shows and Movies">
+          <div class="poster-item">
+            <img src="./images/ds.jpg" alt="Dark TV show poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/friends.jpg" alt="Friends sitcom poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/lak.jpg" alt="Lucifer TV show poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/hoc.jpg" alt="House of Cards political drama poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/dn.webp" alt="Death Note anime poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/ns.jpg" alt="Narcos crime drama poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/dn2.jpg" alt="Death Note sequel poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/ns2.jpg" alt="Narcos season 2 poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+          <div class="poster-item">
+            <img src="./images/mha2.jpeg" alt="My Hero Academia season 2 poster" loading="lazy" />
+            <div class="poster-overlay">
+              <button class="quick-play" aria-label="Quick play">▶</button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div class="continue-card">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <div class="progress"><i style="width:65%;"></i></div>
-        <div class="meta"><span>S4 E7</span><span>32 min left</span></div>
+      <!-- Continue Watching -->
+      <section class="section" aria-labelledby="continue-title">
+        <div class="section-header">
+          <h2 id="continue-title">Continue Watching</h2>
+        </div>
+        <div class="continue-list" role="list" aria-label="Continue watching list">
+          <article class="continue-card" role="listitem">
+            <img src="./images/st2.jpg" alt="Stranger Things cover" loading="lazy" />
+            <div class="progress" aria-label="Progress 65%"><i style="width:65%;"></i></div>
+            <div class="meta"><span>S4 E7</span><span>32 min left</span></div>
+          </article>
+
+          <article class="continue-card" role="listitem">
+            <img src="./images/ds2.jpg" alt="Dark cover" loading="lazy" />
+            <div class="progress" aria-label="Progress 23%"><i style="width:23%;"></i></div>
+            <div class="meta"><span>S2 E3</span><span>45 min left</span></div>
+          </article>
+
+          <article class="continue-card" role="listitem">
+            <img src="./images/mh.webp" alt="Money Heist cover" loading="lazy" />
+            <div class="progress" aria-label="Progress 87%"><i style="width:87%;"></i></div>
+            <div class="meta"><span>S3 E8</span><span>8 min left</span></div>
+          </article>
+
+          <article class="continue-card" role="listitem">
+            <img src="./images/friends.jpg" alt="Friends cover" loading="lazy" />
+            <div class="progress" aria-label="Progress 42%"><i style="width:42%;"></i></div>
+            <div class="meta"><span>S7 E12</span><span>25 min left</span></div>
+          </article>
+
+          <article class="continue-card" role="listitem">
+            <img src="./images/hoc.jpg" alt="House of Cards cover" loading="lazy" />
+            <div class="progress" aria-label="Progress 76%"><i style="width:76%;"></i></div>
+            <div class="meta"><span>S4 E5</span><span>15 min left</span></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+     <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top" aria-label="Scroll to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-links-column">
+            <h3>Help &amp; Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Media Center</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookie Preferences</a></li>
+              <li><a href="#">Corporate Information</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>About Netflix</h3>
+            <ul class="footer-links">
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Ways to Watch</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-column">
+            <h3>Browse</h3>
+            <ul class="footer-links">
+              <li><a href="#">TV Shows</a></li>
+              <li><a href="#">Movies</a></li>
+              <li><a href="#">New Releases</a></li>
+              <li><a href="#">Popular</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="language-selector">
+          <label for="language" class="visually-hidden">Select language</label>
+          <select id="language" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">© 2025 Netflix Clone. All rights reserved.</p>
+          <nav class="legal-links" aria-label="Legal links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </nav>
+        </div>
       </div>
-
-      <div class="continue-card">
-        <img src="./images/ds2.jpg" alt="Dark">
-        <div class="progress"><i style="width:23%;"></i></div>
-        <div class="meta"><span>S2 E3</span><span>45 min left</span></div>
-      </div>
-
-      <div class="continue-card">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <div class="progress"><i style="width:87%;"></i></div>
-        <div class="meta"><span>S3 E8</span><span>8 min left</span></div>
-      </div>
-
-      <div class="continue-card">
-        <img src="./images/friends.jpg" alt="Friends">
-        <div class="progress"><i style="width:42%;"></i></div>
-        <div class="meta"><span>S7 E12</span><span>25 min left</span></div>
-      </div>
-
-      <div class="continue-card">
-        <img src="./images/hoc.jpg" alt="House of Cards">
-        <div class="progress"><i style="width:76%;"></i></div>
-        <div class="meta"><span>S4 E5</span><span>15 min left</span></div>
-      </div>
-
-    </div>
-  </section>
-
-  <button id="backToTop" title="Go to top">↑</button>
-
-  <footer>
-    <div class="footer-content">
-      <p>Questions? Call <a href="#">000-800-919-1694</a></p>
-      <ul class="footer-links">
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Help Center</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Cookie Preferences</a></li>
-        <li><a href="#">Corporate Information</a></li>
-      </ul>
-      <p class="copyright">© 2025 Netflix Clone</p>
-    </div>
-  </footer>
+    </footer>
   </div>
 
+  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
-
 </html>

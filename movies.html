@@ -1,139 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Netflix Clone — Movies</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet" />
 </head>
-
 <body>
   <div id="mainContent">
+    <!-- NAVBAR -->
     <header>
-      <nav class="navbar">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="brand">
-          <a href="index.html">
-            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo">
+          <a href="index.html" aria-label="Netflix Home">
+            <img class="navbar-logo" src="./images/netflixlogo-removebg-preview.png" alt="Netflix logo" />
           </a>
         </div>
 
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
+        <!-- Navigation Links -->
         <ul class="nav-menu" id="navMenu">
           <li><a href="index.html">Home</a></li>
           <li><a href="tv-shows.html">TV Shows</a></li>
           <li><a href="movies.html" class="active">Movies</a></li>
           <li><a href="newpopular.html">New & Popular</a></li>
-          <li><a href="#">My List</a></li>
+          <li><a href="my-list.html">My List</a></li>
         </ul>
 
-        <div class="search" role="search">
-          <input type="search" placeholder="Search Movies" aria-label="Search Movies" />
+        <div class="nav-controls">
+          <form class="search" role="search" aria-label="Search Movies">
+            <input type="search" placeholder="Search Movies" aria-label="Search for titles" />
+          </form>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme">
+            <span id="themeIcon" aria-hidden="true">🌙</span>
+            <span id="themeText" class="theme-text-desktop">Dark</span>
+          </button>
+
+          <div class="user-profile">
+            <img src="./images/user.png" alt="User profile" />
+          </div>
         </div>
       </nav>
     </header>
 
-    <!-- Featured Movie -->
-    <section class="banner" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), 
-                    linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), 
-                    url('./images/bb2.jpg');">
-      <div class="container banner-inner">
+    <!-- BANNER FEATURED MOVIE -->
+    <section class="banner" aria-labelledby="banner-title" style="background-image: linear-gradient(77deg, rgba(0,0,0,0.8) 25%, transparent 85%), linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 100%), url('./images/bb2.jpg');">
+      <div class="banner-inner">
         <div class="banner-content">
-          <h1 class="title">Breaking Bad: The Movie</h1>
-          <p class="desc">Follow the final chapter of Walter White's journey as he navigates the dangerous world of drug cartels and DEA investigations in this thrilling conclusion.</p>
+          <h1 id="banner-title" class="title">Breaking Bad: The Movie</h1>
+          <p class="desc" id="banner-title-desc">Follow the final chapter of Walter White's journey as he navigates the dangerous world of drug cartels and DEA investigations in this thrilling conclusion.</p>
           <div class="buttons">
-            <button class="btn btn-play">▶ Play</button>
-            <button class="btn btn-list">+ My List</button>
+            <button class="btn btn-play">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Play
+            </button>
+            <button class="btn btn-list">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12h14"/>
+              </svg>
+              My List
+            </button>
+            <button class="btn btn-info">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4M12 8h.01"/>
+              </svg>
+              More Info
+            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Movie Categories -->
-    <section class="section">
-      <h2>Trending Now</h2>
-      <div class="posters">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <img src="./images/ns.jpg" alt="Narcos">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <img src="./images/ds2.jpg" alt="Dark">
-        <img src="./images/friends.jpg" alt="Friends">
-        <img src="./images/lak.jpg" alt="Lucifer">
-        <img src="./images/hoc.jpg" alt="House of Cards">
-        <img src="./images/mha.png" alt="My Hero Academia">
+    <!-- MOVIE ROW FUNCTION -->
+    <section class="section" aria-labelledby="trending-title">
+      <div class="section-header">
+        <h2 id="trending-title">Trending Now</h2>
+        <div class="section-controls">
+          <button class="scroll-btn scroll-left" aria-label="Scroll left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="scroll-btn scroll-right" aria-label="Scroll right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="posters" role="list" aria-label="Trending Movies">
+        <div class="poster-item">
+          <img src="./images/st2.jpg" alt="Stranger Things poster">
+        </div>
+        <div class="poster-item">
+          <img src="./images/ns.jpg" alt="Narcos poster">
+        </div>
+        <div class="poster-item">
+          <img src="./images/mh.webp" alt="Money Heist poster">
+        </div>
+        <div class="poster-item">
+          <img src="./images/ds2.jpg" alt="Dark poster">
+        </div>
+        <div class="poster-item">
+          <img src="./images/friends.jpg" alt="Friends poster">
+        </div>
+        <div class="poster-item">
+          <img src="./images/lak.jpg" alt="Lucifer poster">
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Popular on Netflix</h2>
-      <div class="posters">
-        <img src="./images/ns2.jpg" alt="Narcos">
-        <img src="./images/dn.webp" alt="Death Note">
-        <img src="./images/dn2.jpg" alt="Death Note">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <img src="./images/sthings.jpeg" alt="Stranger Things">
-        <img src="./images/mha.png" alt="My Hero Academia">
-        <img src="./images/sexed.jpg" alt="Sex Education">
+    <section class="section" aria-labelledby="popular-title">
+      <div class="section-header">
+        <h2 id="popular-title">Popular on Netflix</h2>
+        <div class="section-controls">
+          <button class="scroll-btn scroll-left" aria-label="Scroll left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="scroll-btn scroll-right" aria-label="Scroll right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="posters" role="list" aria-label="Popular Movies">
+        <div class="poster-item"><img src="./images/ns2.jpg" alt="Narcos poster"></div>
+        <div class="poster-item"><img src="./images/dn.webp" alt="Death Note poster"></div>
+        <div class="poster-item"><img src="./images/dn2.jpg" alt="Death Note poster"></div>
+        <div class="poster-item"><img src="./images/mh.webp" alt="Money Heist poster"></div>
+        <div class="poster-item"><img src="./images/st2.jpg" alt="Stranger Things poster"></div>
+        <div class="poster-item"><img src="./images/mha.png" alt="My Hero Academia poster"></div>
+        <div class="poster-item"><img src="./images/sexed.jpg" alt="Sex Education poster"></div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>New Releases</h2>
-      <div class="posters">
-        <img src="./images/mha2.jpeg" alt="My Hero Academia: World Heroes' Mission">
-        <img src="./images/st3.jpg" alt="Stranger Things: Season 4">
-        <img src="./images/ns2.jpg" alt="Narcos: New Episodes">
-        <img src="./images/ds2.jpg" alt="Dark: Final Season">
-        <img src="./images/sexed.jpg" alt="Sex Education: New Season">
-        <img src="./images/mha.png" alt="My Hero Academia: Season 5">
-        <img src="./images/dn2.jpg" alt="Death Note: Relight">
-        <img src="./images/ns.jpg" alt="Narcos: Mexico">
+    <section class="section" aria-labelledby="new-title">
+      <div class="section-header">
+        <h2 id="new-title">New Releases</h2>
+        <div class="section-controls">
+          <button class="scroll-btn scroll-left" aria-label="Scroll left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          <button class="scroll-btn scroll-right" aria-label="Scroll right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="posters" role="list" aria-label="New Release Movies">
+        <div class="poster-item"><img src="./images/mha2.jpeg" alt="My Hero Academia poster"></div>
+        <div class="poster-item"><img src="./images/st3.jpg" alt="Stranger Things poster"></div>
+        <div class="poster-item"><img src="./images/ns2.jpg" alt="Narcos poster"></div>
+        <div class="poster-item"><img src="./images/ds2.jpg" alt="Dark poster"></div>
+        <div class="poster-item"><img src="./images/sexed.jpg" alt="Sex Education poster"></div>
+        <div class="poster-item"><img src="./images/mha.png" alt="My Hero Academia poster"></div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Action & Adventure</h2>
-      <div class="posters">
-        <img src="./images/st2.jpg" alt="Stranger Things">
-        <img src="./images/ns.jpg" alt="Narcos">
-        <img src="./images/mh.webp" alt="Money Heist">
-        <img src="./images/ds2.jpg" alt="Dark">
-        <img src="./images/mha.png" alt="My Hero Academia">
-        <img src="./images/dn.webp" alt="Death Note">
-        <img src="./images/ns2.jpg" alt="Narcos: Mexico">
-        <img src="./images/sthings.jpeg" alt="Stranger Things">
-      </div>
-    </section>
+    <!-- BACK TO TOP -->
+    <button id="backToTop" title="Go to top" aria-label="Scroll to top">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </button>
 
-    <button id="backToTop" title="Go to top">↑</button>
-
+    <!-- FOOTER -->
     <footer>
-      <div class="footer-content">
-        <p>Questions? Call <a href="#">000-800-919-1694</a></p>
-        <ul class="footer-links">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Cookie Preferences</a></li>
-          <li><a href="#">Corporate Information</a></li>
-        </ul>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-links-column">
+            <h3>Help &amp; Support</h3>
+            <ul class="footer-links">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Media Center</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-column">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookie Preferences</a></li>
+              <li><a href="#">Corporate Information</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-column">
+            <h3>About Netflix</h3>
+            <ul class="footer-links">
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Ways to Watch</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-column">
+            <h3>Browse</h3>
+            <ul class="footer-links">
+              <li><a href="tv-shows.html">TV Shows</a></li>
+              <li><a href="movies.html">Movies</a></li>
+              <li><a href="newpopular.html">New Releases</a></li>
+              <li><a href="#">Popular</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="language-selector">
+          <label for="language" class="visually-hidden">Select language</label>
+          <select id="language" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+
         <p class="copyright">© 2025 Netflix Clone by Sandhit</p>
       </div>
     </footer>
   </div>
 
+  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
-
 </html>
