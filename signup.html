@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix Clone — Sign In / Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#141414;            /* Netflix dark background */
+      --card:#1f1f1f;          /* slightly lighter card */
+      --muted:#b3b3b3;
+      --accent:#e50914;        /* Netflix red */
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(229,9,20,0.06), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(0,0,0,0.25), transparent),
+                  var(--bg);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    /* Container */
+    .auth-wrap{
+      width:100%;
+      max-width:920px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:24px;
+      align-items:center;
+    }
+
+    /* Left decorative panel */
+    .hero{
+      padding:48px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:20px;
+    }
+    .logo{font-weight:800; font-size:42px; letter-spacing:2px; color:var(--accent)}
+    .hero h1{margin:0;font-size:34px}
+    .hero p{margin:0;color:var(--muted);line-height:1.5}
+
+    /* Right card */
+    .card{
+      padding:28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.6) ;
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .toggle{
+      display:flex;
+      gap:8px;
+      background:transparent;
+      margin-bottom:18px;
+    }
+    .toggle button{
+      flex:1;
+      padding:10px 12px;
+      border-radius:8px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      background:transparent;
+      color:var(--muted);
+    }
+    .toggle button.active{color:#fff; background: linear-gradient(90deg, rgba(229,9,20,0.14), rgba(229,9,20,0.06));}
+
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:var(--muted)}
+    input[type=text], input[type=email], input[type=password]{
+      width:100%;
+      padding:12px 14px;
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:8px;
+      color:#fff;
+      outline:none;
+      font-size:15px;
+    }
+    input::placeholder{color: rgba(255,255,255,0.45)}
+
+    .row{display:flex;gap:12px}
+    .small{flex:1}
+
+    .accent-btn{
+      margin-top:6px;
+      background: linear-gradient(180deg,var(--accent), #b20710);
+      border:none;
+      color:#fff;
+      padding:12px 14px;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(229,9,20,0.18);
+    }
+
+    .ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      padding:10px 12px;
+      border-radius:8px;
+      color:var(--muted);
+      cursor:pointer;
+    }
+
+    .help{font-size:13px;color:var(--muted)}
+    .muted{color:var(--muted);font-size:13px}
+
+    .actions{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+
+    .error{color:#ff7b7b;font-size:13px}
+
+    .password-toggle{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:13px}
+
+    /* small screens */
+    @media (max-width:880px){
+      .auth-wrap{grid-template-columns:1fr;padding:0}
+      .hero{order:2}
+    }
+
+    @media (max-width:420px){
+      .hero{padding:28px}
+      .card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="hero">
+      <div class="logo">NETFLIX</div>
+      <h1>Unlimited movies, TV shows, and more.</h1>
+      <p>Watch anywhere. Cancel anytime. Stream thousands of titles — including originals — at the tip of your fingers. Create an account to get started.</p>
+      <p class="muted">This is a clone UI for learning purposes only — no copyrighted content or trademarks are distributed.</p>
+    </div>
+
+    <div class="card" role="region" aria-label="Authentication card">
+      <div class="toggle" role="tablist">
+        <button id="btn-login" class="active" role="tab" aria-selected="true">Sign In</button>
+        <button id="btn-signup" role="tab" aria-selected="false">Sign Up</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="login-form" novalidate>
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" placeholder="name@youmail.com" required />
+
+        <label for="login-password">Password</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="login-password" type="password" placeholder="Your password" required />
+          <button type="button" class="password-toggle" data-target="login-password">Show</button>
+        </div>
+
+        <div class="actions">
+          <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="remember" /> <span class="muted">Remember me</span></label>
+          <a href="#" class="muted">Need help?</a>
+        </div>
+
+        <div id="login-error" class="error" aria-live="polite"></div>
+        <button class="accent-btn" type="submit">Sign In</button>
+
+        <div style="display:flex;gap:8px;align-items:center;margin-top:10px">
+          <div style="flex:1;height:1px;background:rgba(255,255,255,0.03)"></div>
+          <div class="muted">New to Netflix?</div>
+          <div style="flex:1;height:1px;background:rgba(255,255,255,0.03)"></div>
+        </div>
+
+        <button id="goto-signup" type="button" class="ghost" style="width:100%;margin-top:8px">Create an account</button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signup-form" style="display:none" novalidate>
+        <label for="signup-name">Full name</label>
+        <input id="signup-name" type="text" placeholder="Your full name" required />
+
+        <label for="signup-email">Email</label>
+        <input id="signup-email" type="email" placeholder="name@youmail.com" required />
+
+        <label for="signup-password">Password</label>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input id="signup-password" type="password" placeholder="Create a password (min 6 chars)" required />
+          <button type="button" class="password-toggle" data-target="signup-password">Show</button>
+        </div>
+
+        <div class="muted" style="font-size:13px">Passwords must be at least 6 characters.</div>
+        <label style="display:flex;gap:8px;align-items:center;margin-top:8px"><input id="agree" type="checkbox" required /> <span class="muted">I agree to the Terms of Service.</span></label>
+
+        <div id="signup-error" class="error" aria-live="polite"></div>
+        <button class="accent-btn" type="submit">Create Account</button>
+
+        <div class="muted" style="margin-top:8px">Already have an account? <button id="goto-login" type="button" class="ghost">Sign In</button></div>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    // Element refs
+    const btnLogin = document.getElementById('btn-login');
+    const btnSignup = document.getElementById('btn-signup');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const gotoSignup = document.getElementById('goto-signup');
+    const gotoLogin = document.getElementById('goto-login');
+
+    // Toggle logic
+    function showLogin(){
+      btnLogin.classList.add('active'); btnLogin.setAttribute('aria-selected','true');
+      btnSignup.classList.remove('active'); btnSignup.setAttribute('aria-selected','false');
+      loginForm.style.display = '';
+      signupForm.style.display = 'none';
+    }
+    function showSignup(){
+      btnSignup.classList.add('active'); btnSignup.setAttribute('aria-selected','true');
+      btnLogin.classList.remove('active'); btnLogin.setAttribute('aria-selected','false');
+      signupForm.style.display = '';
+      loginForm.style.display = 'none';
+    }
+    btnLogin.addEventListener('click', showLogin);
+    btnSignup.addEventListener('click', showSignup);
+    gotoSignup.addEventListener('click', showSignup);
+    gotoLogin.addEventListener('click', showLogin);
+
+    // Password show/hide
+    document.querySelectorAll('.password-toggle').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const target = document.getElementById(btn.dataset.target);
+        if(!target) return;
+        if(target.type === 'password'){
+          target.type = 'text'; btn.textContent = 'Hide';
+        } else { target.type = 'password'; btn.textContent = 'Show'; }
+      });
+    });
+
+    // Simple client-side 'auth' simulation (for demo only)
+    const fakeDB = { users: [] };
+
+    function validateEmail(v){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    loginForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value;
+      const err = document.getElementById('login-error'); err.textContent = '';
+      if(!validateEmail(email)){ err.textContent = 'Please enter a valid email.'; return; }
+      if(password.length < 6){ err.textContent = 'Password must be at least 6 characters.'; return; }
+      const found = fakeDB.users.find(u => u.email === email && u.password === password);
+      if(!found){ err.textContent = 'Invalid email or password (demo DB).'; return; }
+      // success
+      err.style.color = '#9ff2b0'; err.textContent = 'Signed in successfully (demo). Redirecting...';
+      setTimeout(()=>{ alert('Pretend we redirected to the app.'); err.textContent=''; err.style.color=''; },700);
+    });
+
+    signupForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('signup-name').value.trim();
+      const email = document.getElementById('signup-email').value.trim();
+      const password = document.getElementById('signup-password').value;
+      const agree = document.getElementById('agree').checked;
+      const err = document.getElementById('signup-error'); err.textContent='';
+      if(name.length < 2){ err.textContent = 'Please enter your name.'; return; }
+      if(!validateEmail(email)){ err.textContent = 'Please enter a valid email.'; return; }
+      if(password.length < 6){ err.textContent = 'Password must be at least 6 characters.'; return; }
+      if(!agree){ err.textContent = 'You must agree to the Terms of Service.'; return; }
+      if(fakeDB.users.find(u=>u.email===email)){ err.textContent = 'An account with this email already exists.'; return; }
+
+      // create user in fake DB
+      fakeDB.users.push({name, email, password});
+      err.style.color = '#9ff2b0'; err.textContent = 'Account created (demo). You can now sign in.';
+      setTimeout(()=>{ err.textContent=''; err.style.color=''; showLogin(); },900);
+    });
+
+    // Accessibility: keyboard toggle using arrow keys
+    document.querySelectorAll('.toggle button').forEach((el)=>{
+      el.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+          e.preventDefault();
+          if(el === btnLogin) showSignup(); else showLogin();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
