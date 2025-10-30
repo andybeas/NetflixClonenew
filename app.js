@@ -407,6 +407,34 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+  /**
+ * Enables smooth fade-in and fade-out transitions for the page.
+ * Works on reloads, link clicks, and navigation.
+ */
+function enableSmoothTransitions() {
+  // Fade-in on page load
+  document.body.classList.remove('fade-out');
+
+  // Fade-out before leaving
+  window.addEventListener('beforeunload', () => {
+    document.body.classList.add('fade-out');
+  });
+
+  // Optional: Apply fade-out on internal link clicks
+  document.querySelectorAll('a').forEach(link => {
+    if (link.hostname === window.location.hostname) {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const url = link.href;
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = url;
+        }, 400); // Match your CSS transition duration
+      });
+    }
+  });
+}
+
 
   // Initialize event listeners
   function init() {
