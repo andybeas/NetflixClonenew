@@ -486,7 +486,7 @@ body {
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 /* Banner Meta */
@@ -522,6 +522,10 @@ body {
   color: var(--text-secondary);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   max-width: 500px;
+  background: rgba(0, 0, 0, 0.3); /* Subtle backdrop for text */
+  padding: 8px 12px;
+  border-radius: 4px;
+  line-height: 1.6;
 }
 
 /* Buttons */
@@ -578,18 +582,20 @@ body {
 }
 
 .btn-play:hover {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 .btn-list,
 .btn-info {
-  background: rgba(109, 109, 110, 0.7);
+  background: rgba(109, 109, 110, 0.6);
+  transform: scale(1.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.3), 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .btn-list:hover,
@@ -668,6 +674,7 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--netflix-red) transparent;
   -webkit-overflow-scrolling: touch;
+  perspective: 1000px;
 }
 
 .posters::-webkit-scrollbar {
@@ -675,17 +682,18 @@ body {
 }
 
 .posters::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--bg-primary);
   margin: 0 15px;
+  border-radius: 10px;
 }
 
 .posters::-webkit-scrollbar-thumb {
-  background: var(--netflix-red);
+ background: #a30810; 
   border-radius: 10px;
 }
 
 .posters::-webkit-scrollbar-thumb:hover {
-  background: #f40612;
+  background: var(--netflix-red);
 }
 
 /* Poster Item with Enhanced Overlay */
@@ -700,6 +708,7 @@ body {
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
+  transform-style: preserve-3d;
 }
 
 .poster-item img {
@@ -733,10 +742,13 @@ body {
   transform: scale(1.15) translateY(-10px);
   z-index: 10;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transform: scale(1.15) translateY(-10px) rotateY(2deg); 
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  
 }
 
 .poster-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .poster-item:hover .poster-overlay {
@@ -834,6 +846,7 @@ body {
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: var(--bg-card);
 }
 
 .continue-card:hover {
@@ -847,6 +860,8 @@ body {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .continue-card:hover img {
@@ -855,7 +870,7 @@ body {
 
 .progress {
   position: absolute;
-  bottom: 36px;
+  bottom: 50px;
   left: 0;
   width: 100%;
   height: 5px;
@@ -899,7 +914,11 @@ body {
   padding: 0.75rem 1rem;
   font-size: 0.85rem;
   color: var(--text-secondary);
-  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3));
+  background: var(--surface);
+  padding: 0.75rem 1rem;
+  border-bottom-left-radius: 8px; 
+  border-bottom-right-radius: 8px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Back to Top Button */
